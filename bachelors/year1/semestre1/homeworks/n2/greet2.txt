@@ -1,0 +1,37 @@
+So, here are what we cat propose you:
+First you need login using command 'login' (without quotes)
+After entering commands follow instructions.
+
+For all users:
+    1)Show all categories
+    showt
+    2)Show all dishes in some category
+    showd
+    3)Show new dishes
+    shownew
+    4)Show best dishes(according to users bookings)
+    thebest
+    5)Open menu for some category
+    opencat
+    6)Turn to next page
+    nextp
+    7)Turn to previous page
+    prevp
+    8)To book something on this page
+    book
+    9)To book something in this category
+    books
+    10)To watch description of some dish
+    showdescr
+    11)To create book
+    endb
+    12)To watch propositions with
+    showprop
+
+if your login is root:
+    1)To add new dish
+    dishadd
+    2)Add category
+    catadd
+    3)Add new combination of dishes
+    addcomb

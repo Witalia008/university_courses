@@ -1,0 +1,40 @@
+Hello, user!
+This program will help you to do calculations with long numbers.
+You are able to so such operations:
+1) Write number to some file
+write <number> <filename>
+2) Look for some number in some file
+show <filename>
+3) Get number of digits in number
+getlen <filename>
+4) Compare two numbers
+comp <filename1> <filename2> <filename3>
+5) Summarize two numbers
++ <filename1> <filename2> <filename3>
+6) Substract number B from number A
+- <filename1> <filename2> <filename3>
+7) Multiply two numbers
+* <filename1> <filename2> <filename3>
+8) Divide number A on number B
+/ <filename1> <filename2> <filename3>
+9) Get Greatest Common Divisor
+gcd <filename1> <filename2> <filename3>
+10) Get A in power k
+^ <filename1> <filename2> <filename3>
+11) Get square root of number
+sqrt <filename1> <filename2> <precision>
+12) Loong Summarize two numbers
+++ <sign1> <filename1> <sign2> <filename2> <filename3>
+13) Loong Substract number B from number A
+-- <sign1> <filename1> <sign2> <filename2> <filename3>
+14) Loong Multiply two numbers
+** <sign1> <filename1> <sign2> <filename2> <filename3>
+15) Loong Divide number A on number B
+// <sign1> <filename1> <sign2> <filename2> <filename3> <filename3>
+16) Loong compare numbers
+COMP <filename1> <filename2> <filename3>
+17) Loong power
+POW <filename1> <filename2> <filename3>
+
+You can also terminate program with command "exit".
+Or get manual with command "man".

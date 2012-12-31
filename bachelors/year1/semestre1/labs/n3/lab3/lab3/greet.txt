@@ -1,0 +1,11 @@
+There are three possible ways to play(player vs. player, player vs. machine, machine vs. machine).
+The rules are:
+Each player has set of words.
+Each step is choosing word (or letter if word has length 1), searching this word or letter in opponents set,
+and erasing both of them.
+Game ends if there is no possible steps.
+You get one point for each letter erased.
+
+to start game enter 'start'
+to watch all made steps - 'showst'
+and follow instructions during game

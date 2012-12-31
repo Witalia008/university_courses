@@ -1,0 +1,23 @@
+Here is program that gives you opportunity doing some operations with
+geometric figures (polygon, circle).
+
+What you can do(after commant follow instructions):
+1)Input some figure
+    inp
+2)Get square of figure
+    sqr
+3)Get perimeter of figure
+    per
+4)Get lengths of sides of figure
+    sidelen
+
+Before doing following you should enter combination (following the instructions)
+5)Intersect
+    inter
+6)Union
+    union
+7)Difference
+    diff
+8)Symmetric difference
+    symd
+	

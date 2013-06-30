@@ -1,0 +1,48 @@
+Sorting N1
+quick_sort 220386 ops
+complexity N * logN (worst N ^ 2)
+132877
+Working time 0.005 secs.
+
+Sorting N2
+heap_sort 249511 ops
+complexity N * logN
+132877
+Working time 0.008 secs.
+
+Sorting N3
+btree_sort 178272 ops
+complexity N * logN (Cartesian randomized tree) (worst N ^ 2)
+132877
+Working time 0.01 secs.
+
+Sorting N4
+top_sort 49919949 ops
+complexity N ^ 2
+100000000
+Working time 1.543 secs.
+
+Sorting N5
+intro_sort 219174 ops
+complexity N * logN
+132877
+Working time 0.006 secs.
+
+Sorting N6
+merge_sort 1068808 ops
+complexity N * logN, O(1) memory
+132877
+Working time 0.034 secs.
+
+Sorting N7
+bucket_sort 25092 ops
+complexity N + K (worst N ^ 2 * K)
+100000000
+Working time 0.004 secs.
+
+Sorting N8
+patience_sort 9999 ops
+complexity N * logN
+132877
+Working time 0.025 secs.
+

@@ -1,0 +1,9 @@
+a::b::c::d::e::f = 1
+main::2 = 4
+main::6 = a
+main::a = 1
+main::b = 3
+main::c = 1
+x::a = q
+x::a::b = 1
+x::a::b::c::a = asdsf

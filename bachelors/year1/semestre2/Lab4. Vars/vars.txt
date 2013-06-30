@@ -1,0 +1,7 @@
+main::a oi
+x::a 2
+p::a 1
+main::b 2
+main::C 3
+x::A asd
+main::namespace main::

@@ -1,0 +1,9 @@
+main::
+a 1
+C 3
+b 2
+x::
+a 2
+A asd
+p::
+a 1

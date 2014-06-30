@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/flag.ico</file>
+        <file>icons/mine.ico</file>
+        <file>icons/mine2.ico</file>
+        <file>icons/mine3.ico</file>
+        <file>icons/mine4.ico</file>
+        <file>icons/smiley.ico</file>
+        <file>icons/smiley1.ico</file>
+        <file>icons/smiley3.ico</file>
+        <file>icons/tile.ico</file>
+    </qresource>
+</RCC>

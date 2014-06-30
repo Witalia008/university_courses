@@ -20,4 +20,4 @@ Before doing following you should enter combination (following the instructions)
     diff
 8)Symmetric difference
     symd
-	
+    

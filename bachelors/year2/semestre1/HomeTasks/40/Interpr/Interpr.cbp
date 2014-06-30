@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-	<FileVersion major="1" minor="6" />
-	<Project>
-		<Option title="Interpr" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc" />
-		<Build>
-			<Target title="Debug">
-				<Option output="bin/Debug/Interpr" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-g" />
-				</Compiler>
-			</Target>
-			<Target title="Release">
-				<Option output="bin/Release/Interpr" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-O2" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
-			</Target>
-		</Build>
-		<Compiler>
-			<Add option="-Wall" />
-			<Add option="-fexceptions" />
-		</Compiler>
-		<Unit filename="interpreter/analyzer.cpp" />
-		<Unit filename="interpreter/analyzer.h" />
-		<Unit filename="interpreter/executer.cpp" />
-		<Unit filename="interpreter/executer.h" />
-		<Unit filename="interpreter/parser.cpp" />
-		<Unit filename="interpreter/parser.h" />
-		<Unit filename="interpreter/program.cpp" />
-		<Unit filename="interpreter/program.h" />
-		<Unit filename="interpreter/stnlib.cpp" />
-		<Unit filename="interpreter/stnlib.h" />
-		<Unit filename="interpreter/tree/list.cpp" />
-		<Unit filename="interpreter/tree/node.cpp" />
-		<Unit filename="interpreter/tree/node.h" />
-		<Unit filename="interpreter/tree/tree.cpp" />
-		<Unit filename="interpreter/tree/tree.h" />
-		<Unit filename="interpreter/vars/bor.cpp" />
-		<Unit filename="interpreter/vars/bor.h" />
-		<Unit filename="interpreter/vars/list.cpp" />
-		<Unit filename="interpreter/vars/list.h" />
-		<Unit filename="interpreter/vars/variables.cpp" />
-		<Unit filename="interpreter/vars/variables.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="master.h" />
-		<Unit filename="tools.cpp" />
-		<Unit filename="tools.h" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-			<lib_finder disable_auto="1" />
-		</Extensions>
-	</Project>
+    <FileVersion major="1" minor="6" />
+    <Project>
+        <Option title="Interpr" />
+        <Option pch_mode="2" />
+        <Option compiler="gcc" />
+        <Build>
+            <Target title="Debug">
+                <Option output="bin/Debug/Interpr" prefix_auto="1" extension_auto="1" />
+                <Option object_output="obj/Debug/" />
+                <Option type="1" />
+                <Option compiler="gcc" />
+                <Compiler>
+                    <Add option="-g" />
+                </Compiler>
+            </Target>
+            <Target title="Release">
+                <Option output="bin/Release/Interpr" prefix_auto="1" extension_auto="1" />
+                <Option object_output="obj/Release/" />
+                <Option type="1" />
+                <Option compiler="gcc" />
+                <Compiler>
+                    <Add option="-O2" />
+                </Compiler>
+                <Linker>
+                    <Add option="-s" />
+                </Linker>
+            </Target>
+        </Build>
+        <Compiler>
+            <Add option="-Wall" />
+            <Add option="-fexceptions" />
+        </Compiler>
+        <Unit filename="interpreter/analyzer.cpp" />
+        <Unit filename="interpreter/analyzer.h" />
+        <Unit filename="interpreter/executer.cpp" />
+        <Unit filename="interpreter/executer.h" />
+        <Unit filename="interpreter/parser.cpp" />
+        <Unit filename="interpreter/parser.h" />
+        <Unit filename="interpreter/program.cpp" />
+        <Unit filename="interpreter/program.h" />
+        <Unit filename="interpreter/stnlib.cpp" />
+        <Unit filename="interpreter/stnlib.h" />
+        <Unit filename="interpreter/tree/list.cpp" />
+        <Unit filename="interpreter/tree/node.cpp" />
+        <Unit filename="interpreter/tree/node.h" />
+        <Unit filename="interpreter/tree/tree.cpp" />
+        <Unit filename="interpreter/tree/tree.h" />
+        <Unit filename="interpreter/vars/bor.cpp" />
+        <Unit filename="interpreter/vars/bor.h" />
+        <Unit filename="interpreter/vars/list.cpp" />
+        <Unit filename="interpreter/vars/list.h" />
+        <Unit filename="interpreter/vars/variables.cpp" />
+        <Unit filename="interpreter/vars/variables.h" />
+        <Unit filename="main.cpp" />
+        <Unit filename="master.h" />
+        <Unit filename="tools.cpp" />
+        <Unit filename="tools.h" />
+        <Extensions>
+            <code_completion />
+            <envvars />
+            <debugger />
+            <lib_finder disable_auto="1" />
+        </Extensions>
+    </Project>
 </CodeBlocks_project_file>

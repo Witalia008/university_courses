@@ -4,17 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLProj", "GLProj\GLProj.vcxproj", "{2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}"
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Debug|Win32.ActiveCfg = Debug|Win32
-		{2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Debug|Win32.Build.0 = Debug|Win32
-		{2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Release|Win32.ActiveCfg = Release|Win32
-		{2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Release|Win32.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Win32 = Debug|Win32
+        Release|Win32 = Release|Win32
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Debug|Win32.ActiveCfg = Debug|Win32
+        {2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Debug|Win32.Build.0 = Debug|Win32
+        {2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Release|Win32.ActiveCfg = Release|Win32
+        {2CC6CDD6-2EBE-4049-8885-A79BD1F3E659}.Release|Win32.Build.0 = Release|Win32
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
 EndGlobal

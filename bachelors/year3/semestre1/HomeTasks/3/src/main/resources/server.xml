@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window>
+    <width>700</width>
+    <height>500</height>
+    <button>ellipse</button>
+    <button>line</button>
+    <button>rect</button>
+    <button>save</button>
+    <button>load</button>
+    <button>bg</button>
+    <button>fg</button>
+</window>

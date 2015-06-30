@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1">
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="50dp"
+              android:layout_marginTop="50dp"
+              android:textSize="40dp"
+              android:text="Walked 0 m"
+              android:id="@+id/lengthMessage"/>
+    <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="Start"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:onClick="startClicked"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="Stop"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:onClick="stopClicked"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="Reset"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:onClick="resetClicked"/>
+        <CheckBox android:text="Displacement"
+                  android:layout_row="1"
+                  android:layout_column="0"
+                  android:layout_columnSpan="2"
+                  android:id="@+id/displCheck"/>
+    </GridLayout>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/history"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="Current acceleration:"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/accAll"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/accX"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/accY"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/accZ"/>
+
+</LinearLayout>
+

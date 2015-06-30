@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="hw25">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='war.hw25' />
+
+
+</module>

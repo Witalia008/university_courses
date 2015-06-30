@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="gems.xsl"?>
+
+<Gems>
+    <gem id="gem1">
+        <name>Ruby</name>
+        <preciousness>Precious</preciousness>
+        <origin>Mogok Valley</origin>
+        <visualParameters>
+            <color>red</color>
+            <transparency>80%</transparency>
+            <engraving>
+                <type>Star</type>
+                <numberOfSides>5</numberOfSides>
+            </engraving>
+        </visualParameters>
+        <value>30</value>
+    </gem>
+    <gem id="gem2">
+        <name>Amethyst</name>
+        <preciousness>Half-Precious</preciousness>
+        <origin>Thailand</origin>
+        <visualParameters>
+            <color>green</color>
+            <transparency>0%</transparency>
+            <engraving>
+                <type>Cube</type>
+                <numberOfSides>6</numberOfSides>
+            </engraving>
+        </visualParameters>
+        <value>100</value>
+    </gem>
+</Gems>

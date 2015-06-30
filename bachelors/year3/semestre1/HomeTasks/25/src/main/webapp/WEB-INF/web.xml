@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <servlet>
+        <servlet-name>war.hw25 MessageService</servlet-name>
+        <servlet-class>war.server.MessageServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>war.hw25 MessageService</servlet-name>
+        <url-pattern>/hw25/messages</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Default page to serve -->
+    <welcome-file-list>
+        <welcome-file>hw25.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>

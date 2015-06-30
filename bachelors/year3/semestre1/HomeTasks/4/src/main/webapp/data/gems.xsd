@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Gems">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gem" type="gemType"
+                    minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="gemType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="preciousness" type="preciousType" />
+            <xs:element name="origin" type="xs:string" />
+            <xs:element name="visualParameters" type="vpType" />
+            <xs:element name="value">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required" />
+    </xs:complexType>
+    
+    <xs:simpleType name="preciousType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Precious" />
+            <xs:enumeration value="Half-Precious" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="vpEngravingType">
+        <xs:sequence>
+            <xs:element name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Ball" />
+                        <xs:enumeration value="Star" />
+                        <xs:enumeration value="Cube" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="numberOfSides">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="4" />
+                        <xs:maxInclusive value="15" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="vpType">
+        <xs:sequence>
+            <xs:element name="color">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="red" />
+                        <xs:enumeration value="green" />
+                        <xs:enumeration value="yellow" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="transparency">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="100|[0-9]{1,2}%" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="engraving" type="vpEngravingType" />
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

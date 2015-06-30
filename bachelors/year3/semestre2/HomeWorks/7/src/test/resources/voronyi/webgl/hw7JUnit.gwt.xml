@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="hw7">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='voronyi.webgl.hw7' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <!--<servlet path="/hw7/greet" class="voronyi.webgl.server.GreetingServiceImpl" />-->
+
+</module>

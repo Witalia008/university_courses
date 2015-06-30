@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="N1">
+    <!-- Inherit our applications main module.                      -->
+    <inherits name='univ.c3.II.oop.N1'/>
+
+
+</module>

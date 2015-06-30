@@ -1,0 +1,40 @@
+<taglib
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+    <tlib-version>1.0</tlib-version>
+    <short-name>Local minimums in array</short-name>
+    <uri>localmin</uri>
+
+    <tag>
+        <name>minimums</name>
+        <tag-class>tags.LocalMinFinder</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>array</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+            <required>true</required>
+        </attribute>
+    </tag>
+    <tag>
+        <name>maximums</name>
+        <tag-class>tags.LocalMaxFinder</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>array</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+    <function>
+        <name>strArrToIntArr</name>
+        <function-class>tags.ArrUtil</function-class>
+        <function-signature>
+            java.lang.Integer[] toIntArr(java.lang.String[])
+        </function-signature>
+    </function>
+</taglib>

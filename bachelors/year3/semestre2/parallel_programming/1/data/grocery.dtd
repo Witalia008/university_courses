@@ -1,0 +1,20 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT stock (category)+>
+<!ATTLIST stock
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT category (product)+>
+<!ATTLIST category
+    xmlns CDATA #FIXED ''
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+
+<!ELEMENT product EMPTY>
+<!ATTLIST product
+    xmlns CDATA #FIXED ''
+    count CDATA #REQUIRED
+    fat CDATA #REQUIRED
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #REQUIRED>

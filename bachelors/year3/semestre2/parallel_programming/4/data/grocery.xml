@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock SYSTEM "grocery.dtd">
+<stock>
+    <category id="1" name="Fizzy Drinks">
+        <product id="1" name="Coke" price="1" count="12" fat="0"/>
+        <product id="2" name="Pepsi" price="1.2" count="21" fat="0"/>
+        <product id="3" name="Dr. Pepper" price="0.8" count="4" fat="0"/>
+    </category>
+    <category id="2" name="Milky Products">
+        <product id="4" name="Cottage Cheese" price="5" count="3" fat="32"/>
+        <product id="5" name="Milk" price="3" count="30" fat="12"/>
+    </category>
+    <category id="3" name="Snacks">
+        <product id="6" name="Snickers" price="1.7" count="10" fat="2"/>
+        <product id="7" name="Mars" price="1" count="1" fat="2"/>
+        <product id="8" name="Reeses" price="2.1" count="40" fat="7"/>
+        <product id="9" name="Lion" price="0.4" count="8" fat="1"/>
+    </category>
+</stock>

@@ -63,7 +63,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
         this->close();
         QMessageBox::information(this, "About", "This game I was compelled to develop in order to pass \
                                  laboratory work in university. Just quietly play it.\
-                                 \n02.03.14\nVitalii Kozhukhivskyi");
+                                 \n02.03.14\nWitalia");
     }
     if (event->key() == Qt::Key_Back) {
         this->close();

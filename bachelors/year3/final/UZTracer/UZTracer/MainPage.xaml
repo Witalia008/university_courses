@@ -1,0 +1,147 @@
+﻿<Page
+    x:Class="UZTracer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UZTracer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:phone="clr-namespace:Microsoft.Phone;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:data="using:UZTracer.src"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!--<Page.Resources>
+        <data:PriceConverter x:Key="priceConvert"/>
+    </Page.Resources>-->
+    
+    <Grid Loaded="Grid_Loaded">
+        <Pivot Title="Укразалізниця - Квитки" Name="mainPivot">
+            <PivotItem Header="Придбані">
+                <ListBox
+                    Name="ticketsList"
+                    Background="Transparent"
+                    ItemsSource="{Binding}"
+                    SelectionChanged="ItemList_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel
+                                Holding="ListViewItem_Holding">
+                                <FlyoutBase.AttachedFlyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Text="Add" Click="Add_Click"/>
+                                        <MenuFlyoutItem Text="Info" Click="Info_Click"/>
+                                        <MenuFlyoutItem Text="Edit" Click="Edit_Click"/>
+                                        <MenuFlyoutItem Text="Delete" Click="Remove_Click"/>
+                                    </MenuFlyout>
+                                </FlyoutBase.AttachedFlyout>
+
+                                <TextBlock
+                                    Style="{StaticResource BaseTextBlockStyle}"
+                                    Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </PivotItem>
+            <PivotItem Header="Очікуються">
+                <ListBox
+                    Name="requestsList"
+                    Background="Transparent"
+                    ItemsSource="{Binding}"
+                    SelectionChanged="ItemList_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel
+                                    Holding="ListViewItem_Holding">
+                                <FlyoutBase.AttachedFlyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Text="Add" Click="Add_Click"/>
+                                        <MenuFlyoutItem Text="Info" Click="Info_Click"/>
+                                        <MenuFlyoutItem Text="Edit" Click="Edit_Click"/>
+                                        <MenuFlyoutItem Text="Delete" Click="Remove_Click"/>
+                                    </MenuFlyout>
+                                </FlyoutBase.AttachedFlyout>
+
+                                <TextBlock
+                                        Style="{StaticResource BaseTextBlockStyle}"
+                                        Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </PivotItem>
+            <PivotItem Header="Пошук">
+                <ScrollViewer>
+                    <StackPanel Name="trainReqBox" VerticalAlignment="Stretch">
+                        <TextBlock Name="debugOutput" TextWrapping="Wrap"/>
+                        <AutoSuggestBox
+                            Name="fromBox"
+                            Header="Звідки"
+                            ItemsSource="{Binding sugg}"
+                            TextChanged="suggestions_TextChanged"
+                            Tag="from"
+                            SuggestionChosen="suggestBox_SuggestionChosen"/>
+                            <AutoSuggestBox
+                            Name="toBox"
+                            Header="Куди"
+                            ItemsSource="{Binding sugg}"
+                            TextChanged="suggestions_TextChanged"
+                            Tag="to"
+                            SuggestionChosen="suggestBox_SuggestionChosen"/>
+                            
+                        <DatePicker
+                            Header="Дата відправлення"
+                            Date="{Binding date, Mode=TwoWay}"/>
+                        <TimePicker
+                            Header="Час відправлення від"
+                            Time="{Binding time, Mode=TwoWay}"/>
+                        <!--<CheckBox
+                            Content="Туди і назад"
+                            IsChecked="{Binding roundTrip}"/>-->
+                        <Button Content="Пошук" Click="Search_Click"/>
+                        <ListView
+                            Name="results"
+                            Background="Transparent"
+                            ItemsSource="{Binding}"
+                            IsItemClickEnabled="True"
+                            ItemClick="results_ItemClick">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border
+                                        BorderBrush="{StaticResource PhoneForegroundBrush}"
+                                        BorderThickness="{StaticResource PhoneBorderThickness}">
+                                        <StackPanel>
+                                            <TextBlock
+                                                Style="{StaticResource BaseTextBlockStyle}"
+                                                Text="{Binding}"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Add" Icon="Add" Click="Add_Click"/>
+            <AppBarButton Label="Delete" Icon="Delete" Click="Remove_Click"/>
+            <AppBarButton Label="Edit" Icon="Edit" Click="Edit_Click"/>
+            <AppBarButton Label="Info" Icon="Bullets" Click="Info_Click"/>
+            
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Help" Icon="Help" Click="Help_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

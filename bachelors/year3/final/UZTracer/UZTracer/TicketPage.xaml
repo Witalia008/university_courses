@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="UZTracer.TicketPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UZTracer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="55*"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            TextWrapping="Wrap" 
+            Text="Перевірка/додавання квитка"
+            FontSize="36"/>
+        <ScrollViewer
+            Grid.Row="1">
+            <StackPanel
+                VerticalAlignment="Stretch"
+                Name="ticketInfo">
+
+                <AutoSuggestBox
+                    Name="fromBox"
+                    Header="Звідки"
+                    ItemsSource="{Binding sugg}"
+                    TextChanged="suggestions_TextChanged"
+                    Tag="from"
+                    SuggestionChosen="suggestBox_SuggestionChosen"/>
+                <AutoSuggestBox
+                    Name="toBox"
+                    Header="Куди"
+                    ItemsSource="{Binding sugg}"
+                    TextChanged="suggestions_TextChanged"
+                    Tag="to"
+                    SuggestionChosen="suggestBox_SuggestionChosen"/>
+
+                <StackPanel>
+                    <TimePicker
+                        Header="Час відправлення"
+                        Time="{Binding departure.time, Mode=TwoWay}"/>
+                    <DatePicker Date="{Binding departure.date, Mode=TwoWay}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TimePicker
+                        Header="Час прибуття"
+                        Time="{Binding arrival.time, Mode=TwoWay}"/>
+                    <DatePicker Date="{Binding arrival.date, Mode=TwoWay}"/>
+                </StackPanel>
+
+                <CheckBox
+                    Content="Нагадати?"
+                    IsChecked="{Binding Path=notifyBeforeDeparture, Mode=TwoWay}"/>
+                <Button
+                    Content="Гаразд"
+                    HorizontalAlignment="Right"
+                    Click="Button_Click"/>
+                <!--<TextBlock Name="debugOutput"/>-->
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

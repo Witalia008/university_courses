@@ -1,0 +1,121 @@
+disk initialized
+a1 created
+a2 created
+a3 created
+a4 created
+a5 created
+a6 created
+a7 created
+a8 created
+a9 created
+a10 created
+a1 opened 1
+192 bytes written
+1 closed
+a2 opened 1
+192 bytes written
+1 closed
+a3 opened 1
+192 bytes written
+1 closed
+a4 opened 1
+192 bytes written
+1 closed
+a5 opened 1
+192 bytes written
+1 closed
+a6 opened 1
+192 bytes written
+1 closed
+a7 opened 1
+192 bytes written
+1 closed
+a8 opened 1
+192 bytes written
+1 closed
+a9 opened 1
+192 bytes written
+1 closed
+a10 opened 1
+192 bytes written
+1 closed
+a11 created
+a11 opened 1
+192 bytes written
+1 closed
+a12 created
+a12 opened 1
+192 bytes written
+1 closed
+a13 created
+a13 opened 1
+192 bytes written
+1 closed
+a14 created
+a14 opened 1
+192 bytes written
+1 closed
+a15 created
+a15 opened 1
+192 bytes written
+1 closed
+a16 created
+a16 opened 1
+192 bytes written
+1 closed
+a17 created
+a17 opened 1
+192 bytes written
+1 closed
+a18 created
+a18 opened 1
+192 bytes written
+1 closed
+a19 created
+a19 opened 1
+0 bytes written
+1 closed
+a20 created
+a20 opened 1
+0 bytes written
+1 closed
+a21 created
+a21 opened 1
+0 bytes written
+1 closed
+a22 created
+a22 opened 1
+0 bytes written
+1 closed
+a23 created
+a23 opened 1
+0 bytes written
+1 closed
+error No free descriptor
+error -1
+error
+error No open file with such OFT index
+a16 opened 1
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+1 closed
+a19 opened 1
+
+1 closed
+disk saved
+
+disk restored
+a1 opened 1
+a2 opened 2
+a4 destroyed
+a4 created
+a4 opened 3
+60 bytes written
+10 bytes written
+position is 59
+xyyyyyyyyyy
+3 closed
+position is 10
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+position is 190
+cc
+a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12 a13 a14 a15 a16 a17 a18 a19 a20 a21 a22 a23 

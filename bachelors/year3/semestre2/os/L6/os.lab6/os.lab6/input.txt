@@ -1,0 +1,121 @@
+in
+cr a1
+cr a2
+cr a3
+cr a4
+cr a5
+cr a6
+cr a7
+cr a8
+cr a9
+cr a10
+op a1
+wr 1 c 200
+cl 1
+op a2
+wr 1 c 200
+cl 1
+op a3
+wr 1 c 200
+cl 1
+op a4
+wr 1 c 200
+cl 1
+op a5
+wr 1 c 200
+cl 1
+op a6
+wr 1 c 200
+cl 1
+op a7
+wr 1 c 200
+cl 1
+op a8
+wr 1 c 200
+cl 1
+op a9
+wr 1 c 200
+cl 1
+op a10
+wr 1 c 200
+cl 1
+cr a11
+op a11
+wr 1 c 200
+cl 1
+cr a12
+op a12
+wr 1 c 200
+cl 1
+cr a13
+op a13
+wr 1 c 200
+cl 1
+cr a14
+op a14
+wr 1 c 200
+cl 1
+cr a15
+op a15
+wr 1 c 200
+cl 1
+cr a16
+op a16
+wr 1 d 200
+cl 1
+cr a17
+op a17
+wr 1 d 200
+cl 1
+cr a18
+op a18
+wr 1 d 300
+cl 1
+cr a19
+op a19
+wr 1 d 200
+cl 1
+cr a20
+op a20
+wr 1 d 200
+cl 1
+cr a21
+op a21
+wr 1 d 200
+cl 1
+cr a22
+op a22
+wr 1 d 200
+cl 1
+cr a23
+op a23
+wr 1 d 200
+cl 1
+cr a24
+op a24
+wr 1 d 200
+cl 1
+op a16
+rd 1 190
+cl 1
+op a19
+rd 1 190
+cl 1
+sv disk0.txt
+
+in disk0.txt
+op a1
+op a2
+de a4
+cr a4
+op a4
+wr 3 x 60
+wr 3 y 10
+sk 3 59
+rd 3 13
+cl 3
+sk 1 10
+rd 1 100
+sk 2 190
+rd 2 200
+dr

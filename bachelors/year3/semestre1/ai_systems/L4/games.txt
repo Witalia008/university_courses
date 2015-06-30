@@ -1,0 +1,17 @@
+B = [[4, 4, white, queen], [1, 4, black, king], [2, 4, black, pawn], underAttack(B, B, [1,4,black,king]).
+
+% Etudes
+chess(user, comp, white, black, [[5, 5, white, king], [6, 6, white, pawn], [7, 5, white, pawn], [6, 7, black, king], [7, 6, black, pawn]], 2).
+
+chess(user, comp, white, black, [[2, 6, white, king], [3, 6, white, pawn], [1, 1, black, king], [4, 5, black, rook]], 2).
+
+chess(user, comp, white, black, [[1, 8, white, king], [2, 7, white, pawn], [1, 6, black, king], [2, 3, white, queen], [3, 6, black, queen]]).
+
+chess(user, comp, white, black, [[1, 3, white, king], [4, 1, white, bishop], [7, 5, white, pawn], [8, 6, white, pawn], [3, 6, black, rook], [7, 6, black, pawn], [8, 2, black, king]]).
+
+chess(user, comp, white, black, [[4, 5, white, king], [5, 3, white, bishop], [7, 6, white, pawn], [5, 7, black, pawn], [8, 7, black, pawn], [6, 8, black, king]]).
+
+% checkmate in 2 steps
+chess(user, comp, white, black, [[3, 2, white, king], [4, 4, white, queen], [1, 3, black, king], [2, 5, black, pawn]], 2).
+
+% checkmate in 3 steps

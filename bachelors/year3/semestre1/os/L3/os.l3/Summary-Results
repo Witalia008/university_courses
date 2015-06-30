@@ -1,0 +1,17 @@
+Scheduling Type: Interactive
+Scheduling Name: Round-robin
+Simulation run Time: 319
+
+Average runtime: 100
+Standard runtime average Deviation: 10
+
+Average runtime before blocking: 10
+Standard runtime average Deviation: 5
+
+Average of blocking time: 10
+Standard blocking time Deviation: 5
+
+Process #	T before block	Blocking time	CPU Completed	CPU Blocked
+0		8 (ms)		13 (ms)		101 (ms)	4 times
+1		5 (ms)		8 (ms)		108 (ms)	8 times
+2		11 (ms)		14 (ms)		108 (ms)	4 times

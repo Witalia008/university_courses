@@ -1,0 +1,28 @@
+<h1>Edit Article</h1>
+<%= render 'form' %>
+
+<h2>Edit permissions</h2>
+<h4>Banned:</h4>
+<ul>
+    <% @article.roles.each do |role| %>
+        <li><%= role.role_name %></li>
+    <% end %>
+</ul>
+<br/>
+<%= form_tag(article_perm_edit_path(@article)) do %>
+    <p>
+      <%= label_tag :role %>
+      <%= collection_select :role, :id, Role.all, :id, :role_name %>
+    </p>
+    <p>
+      Allowed:
+      <%= check_box_tag :allowed %>
+    </p>
+    <p>
+      <%= submit_tag 'Update' %>
+    </p>
+<% end %>
+
+<br/>
+
+<%= link_to 'Back', article_path(@article) %>

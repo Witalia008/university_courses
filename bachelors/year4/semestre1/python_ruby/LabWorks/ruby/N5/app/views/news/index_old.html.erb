@@ -1,0 +1,13 @@
+<h1>Old news</h1>
+
+<%= month_calendar do |date| %>
+    <%= link_to date.to_s, news_old_path(start_date: date) %>
+<% end %>
+
+<% @old_news.each do |news| %>
+    <%= render 'news/show', :news => news, :full => false %>
+<% end %>
+
+
+<br/>
+<%= link_to 'Back', news_index_path %>

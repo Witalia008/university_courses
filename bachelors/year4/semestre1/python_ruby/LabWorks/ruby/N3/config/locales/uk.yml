@@ -1,0 +1,53 @@
+uk:
+  uk_locale_name: "УКР"
+  site_title: "Платежі"
+  login_welcome: "Ласкаво просимо! Ви уввійшли як %{user}"
+  invalid_credentials: 'Неправильний логін або пароль'
+  sign_up: 'Реєстрація'
+  sign_up_submit: 'Вперед!'
+  signup_pagen: 'Реєстрація нового користувача'
+  log_in: 'Увійти'
+  log_in_submit: 'Увійти'
+  login_pagen: 'Вхід до особистого кабінету'
+  home: 'Домашня сторінка'
+  admin: 'Адміністрування'
+  profile: 'Профіль'
+  settings: 'Налаштування'
+  log_out: 'Вийти'
+  list_of_users: 'Список користувачів'
+  view: 'Перегляд'
+
+  accounts: "Рахунок"
+  my_accounts: "Мої рахунки"
+  unblock: "Розблокувати"
+  block: "Заблокувати"
+  create_new: "Створити новий"
+  back: "Назад"
+  credit_cards: "Кредитні картки"
+  blocked: "Заблокований"
+  balance: "Баланс"
+  no: "ні"
+  yes: "так"
+  credit_card: "Кредитна картка"
+  account: "Рахунок"
+  owner: "Власник"
+  cards: "Картки"
+  change: "Змінити"
+  incorrect_balance_delta: "Неправильно задана зміна балансу"
+  changed: "Змінено"
+  unblocked: "Розблоковано"
+  cannot_be_done: "Не можна здійснити"
+  created: "Створено"
+
+  username_or_email: "Нік-нейм чи елекронна пошта"
+  login_password: "Пароль"
+  balance_delta: "Зміна балансу"
+  username: "Нік-нейм"
+
+  helpers:
+    label:
+      user:
+        username: 'Нік-нейм'
+        email: 'Електронна пошта'
+        password: 'Пароль'
+        password_confirmation: 'Підтвердіть пароль'

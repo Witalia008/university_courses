@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<%= form_tag(:action => :login_attempt) do %>
+    <p>
+      <%= label_tag :username_or_email %>
+      <%= text_field_tag :username_or_email %>
+    </p>
+    <p>
+      <%= label_tag :login_password %>
+      <%= password_field_tag :login_password %>
+    </p>
+    <p>
+      <%= submit_tag :login %>
+    </p>
+<% end %>

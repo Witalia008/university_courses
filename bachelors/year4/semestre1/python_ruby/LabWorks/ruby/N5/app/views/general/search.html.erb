@@ -1,0 +1,46 @@
+<h1>Search</h1>
+
+<%= render 'general/search' %>
+
+
+<% if params[:query] %>
+    <h2>Results</h2>
+    <% unless @items.empty? %>
+        <h3>Items</h3>
+        <table align="center">
+          <% @items.in_groups_of(3, false) do |gr| %>
+              <tr>
+                <% gr.each do |item| %>
+                    <td><%= render 'items/show', :item => item, :group => item.group, :short => true %></td>
+                <% end %>
+              </tr>
+          <% end %>
+        </table>
+    <% end %>
+
+    <% unless @groups.empty? %>
+        <h3>Groups</h3>
+        <table align="center">
+          <% @groups.in_groups_of(3, false) do |gr| %>
+              <tr>
+                <% gr.each do |group| %>
+                    <td><%= render 'groups/show', :group => group, :parent => false %></td>
+                <% end %>
+              </tr>
+          <% end %>
+        </table>
+    <% end %>
+
+    <% unless @news.empty? %>
+        <h3>News</h3>
+        <table align="center">
+          <% @news.in_groups_of(3, false) do |gr| %>
+              <tr>
+                <% gr.each do |news| %>
+                    <td><%= render 'news/show', :news => news, :full => false %></td>
+                <% end %>
+              </tr>
+          <% end %>
+        </table>
+    <% end %>
+<% end %>

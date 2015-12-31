@@ -1,0 +1,7 @@
+<div class="Sign_Form">
+    <% if @is_admin %>
+        <%= link_to (t :list_of_users), users_path %><br/>
+    <% end %>
+    <%= link_to (t :my_accounts), user_accounts_path(@user) %>
+    <%= link_to (t :credit_cards), user_credit_cards_path(@user) %>
+</div>

@@ -1,0 +1,6 @@
+<div class="Sign_Form">
+    <% @cards.each do |card| %>
+        <%= link_to ((t :credit_card).to_s + ' ' + card.id.to_s), user_account_credit_card_path(@user, card.account, card) %><br/>
+    <% end %>
+    <%= link_to (t :back), home_path %>
+</div>

@@ -1,0 +1,44 @@
+<% content_for :headers do %>
+    <meta name="keywords" content="<%= @group.keywords %>">
+    <meta name="description" content="<%= @group.description %>">
+<% end %>
+
+<%= render 'groups/show', :group => @group, :parent => true %>
+
+<br/>
+<h2>Subgroups</h2>(<%= link_to 'Create New', group_new_path(@group) %>)
+
+<table align="center">
+    <% @group.children.in_groups_of(3, false) do |gr| %>
+        <tr>
+          <% gr.each do |subg| %>
+            <td>
+              <%= render 'groups/show', :group => subg, :parent => false %>
+            </td>
+          <% end %>
+        </tr>
+    <% end %>
+</table>
+
+
+<br/>
+<h2>Items</h2> (<%= link_to 'Create New', new_group_item_path(@group) %>)
+
+<table align="center">
+  <% @items.in_groups_of(3, false) do |igr| %>
+    <tr>
+      <% igr.each do |item| %>
+        <td>
+          <%= render 'items/show', :group => @group, :item => item, :short => true %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<div align="center" class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @items %>
+  </div>
+  <%= will_paginate @items, :container => false %>
+</div>

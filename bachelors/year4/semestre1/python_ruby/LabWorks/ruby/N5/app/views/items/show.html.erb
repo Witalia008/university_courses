@@ -1,0 +1,8 @@
+<% content_for :headers do %>
+    <meta name="keywords" content="<%= @item.keywords %>">
+    <meta name="description" content="<%= @item.description %>">
+<% end %>
+
+<%= render 'items/show', :item => @item, :group => @group, :short => false %>
+
+<%= render 'orders/new', :item => @item, :group => @group %>

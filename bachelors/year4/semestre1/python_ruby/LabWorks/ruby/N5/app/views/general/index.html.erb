@@ -1,0 +1,15 @@
+<h1>Greetings!</h1>
+<p style="font-size: 25px">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet lacus libero.
+  Vestibulum accumsan, mauris in fringilla elementum, ex metus vehicula elit, non mattis ipsum
+  felis rhoncus ipsum. Sed fermentum vel erat ac fermentum. Sed elementum quam at nisi commodo,
+  suscipit venenatis leo ullamcorper. Duis a molestie risus. Duis facilisis interdum neque, ut
+  aliquet erat suscipit ac. Vestibulum malesuada aliquet tellus quis suscipit. Phasellus eu venenatis urna.
+  Vestibulum porta sapien diam, in hendrerit velit commodo nec. Aliquam mollis aliquam velit.
+  Nulla dignissim accumsan nisl vitae mattis. Pellentesque tempor sit amet mi sed faucibus.
+  Curabitur posuere quam eu elit venenatis, ut interdum lectus vulputate.<br/>
+</p>
+<h1>Latest news</h1>
+<% @news.each do |news| %>
+    <%= render 'news/show', :news => news, :full => false %>
+<% end %>

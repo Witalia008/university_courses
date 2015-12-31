@@ -1,0 +1,30 @@
+
+<table width="100%" border="width: 1dp">
+  <tr>
+    <th>Item</th>
+    <th>Amount</th>
+    <th>Total Price</th>
+    <th></th>
+  </tr>
+  <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= link_to order.item.item_name, group_item_path(order.item.group, order.item) %>
+        </td>
+        <td><%= order.count %></td>
+        <td><%= order.price %></td>
+        <td>
+          <% if order.pending %>
+            <%= link_to 'Delete', user_order_path(@user, order), :method => :delete %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+<% if @pending %>
+  Total: <%= @orders.sum(:price) %>
+  <%= link_to 'Pay', user_pay_trolley_path(@user), :method => :patch %>
+<% end %>
+
+<br/>
+<%= link_to 'Back', user_path(@user) %>

@@ -1,0 +1,8 @@
+<div class="Sign_Form">
+    <%= t :credit_card %>: <%= @card.id %><br/>
+    <%= t :balance %>: <%= @card.balance %><br/>
+    <%= t :account %>: <%= @card.account.id %><br/>
+    <%= t :owner %>: <%= @card.user.username %><br/>
+    <%= link_to (t :account), edit_user_account_path(@user, @card.account) %>
+    <%= link_to (t :cards), user_credit_cards_path(@user) %>
+</div>

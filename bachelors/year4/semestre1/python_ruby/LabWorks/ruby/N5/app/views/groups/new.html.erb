@@ -1,0 +1,3 @@
+<h1>New Group</h1>
+
+<%= render 'groups/new', url: (params[:group_id] ? group_create_sub_path(params[:group_id]) : groups_path) %>

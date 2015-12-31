@@ -1,0 +1,5 @@
+<%= form_tag(group_item_order_path(group, item)) do %>
+  <%= label_tag :amount %>
+  <%= number_field_tag :count %>
+  <%= submit_tag 'Order' %>
+<% end %>

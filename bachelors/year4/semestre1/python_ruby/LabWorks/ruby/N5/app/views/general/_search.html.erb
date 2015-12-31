@@ -1,0 +1,4 @@
+<%= form_tag({:controller => 'general', :action => 'search'}, :method => :get) do %>
+    <%= text_field_tag :query, (params[:query] or '') %>
+    <%= submit_tag 'Search' %>
+<% end %>

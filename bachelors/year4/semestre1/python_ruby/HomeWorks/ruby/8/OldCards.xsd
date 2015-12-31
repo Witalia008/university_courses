@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OldCards" type="OldCardsType"/>
+  <xs:complexType name="OldCardsType">
+    <xs:sequence>
+      <xs:element type="cardType" name="card" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cardType">
+    <xs:sequence>
+      <xs:element name="theme">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="City Landscape"/>
+            <xs:enumeration value="Nature"/>
+            <xs:enumeration value="People"/>
+            <xs:enumeration value="Religion"/>
+            <xs:enumeration value="Sport"/>
+            <xs:enumeration value="Architecture"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Gift"/>
+            <xs:enumeration value="Advertisement"/>
+            <xs:enumeration value="Ordinary"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="country" type="xs:string"/>
+
+      <xs:element name="year">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d+(BC|AD)?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="author" maxOccurs="unbounded" minOccurs="0" type="xs:string"/>
+
+      <xs:element name="valuable">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="historical"/>
+            <xs:enumeration value="collectible"/>
+            <xs:enumeration value="thematic"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:ID" name="id" use="required"/>
+  </xs:complexType>
+</xs:schema>

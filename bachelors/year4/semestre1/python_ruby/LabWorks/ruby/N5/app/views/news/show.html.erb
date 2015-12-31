@@ -1,0 +1,9 @@
+<% content_for :headers do %>
+  <meta name="keywords" content="<%= @news.keywords %>">
+  <meta name="description" content="<%= @news.full_text%>">
+<% end %>
+
+<%= render 'news/show', :news => @news, :full => true %>
+
+<br/>
+<%= link_to 'All news', news_index_path %>

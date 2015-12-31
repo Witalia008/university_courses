@@ -1,0 +1,10 @@
+<div style="border: 1px solid black; margin-top: 5px">
+    <h2><%= link_to news.header, news_path(news) %></h2>
+    <h3><%= news.preview %></h3>
+    <%= link_to(image_tag(news.image_url, :width => 300, :alt => news.image_alt), news_path(news))\
+        if news.image.present? %><br/>
+    <% if full %>
+        <%= news.full_text %>
+    <% end %>
+    <br/>
+</div>

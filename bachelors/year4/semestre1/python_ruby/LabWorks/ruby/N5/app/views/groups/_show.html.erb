@@ -1,0 +1,13 @@
+<h2><%= link_to(group.group_name, group_path(group), :class => 'menu_link') %></h2>
+
+<% if parent %>
+    <i><%= group.parent ? link_to('Parent', group_path(group.parent)) : 'No Parent Group' %></i><br/>
+<% end %>
+
+<%= link_to(
+        image_tag(group.image_url, width: 300, alt: group.image_alt), group_path(group))\
+    if group.image.present? %>
+
+<p>
+  <%= group.description %>
+</p>

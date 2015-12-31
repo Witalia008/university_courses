@@ -1,0 +1,10 @@
+<h1>Latest news</h1>
+<% @all_news.each do |news| %>
+    <%= render 'news/show', :news => news, :full => false %>
+<% end %>
+
+<h3><%= link_to 'Archive', news_old_path %></h3>
+
+<% if @is_admin %>
+    <h3><%= link_to 'Create news', new_news_path %></h3>
+<% end %>

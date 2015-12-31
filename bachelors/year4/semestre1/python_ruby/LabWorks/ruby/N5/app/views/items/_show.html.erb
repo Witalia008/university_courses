@@ -1,0 +1,20 @@
+<h2><%= link_to(item.item_name, group_item_path(group, item), :class => 'menu_link') %></h2>
+
+<% unless short %>
+    <i><%= link_to 'To Group', group_path(group) %></i><br/>
+<% end %>
+
+<%= link_to(image_tag(item.image.url, width: 300, alt: item.image_alt), group_item_path(group, item)) %><br/>
+
+<% if short %>
+    <%= item.short_descr %>
+<% else %>
+    <p>
+        <%= item.description %>
+    </p>
+    Price: <%= item.price %>
+<% end %>
+
+
+
+

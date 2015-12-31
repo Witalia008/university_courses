@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rhw3</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <% if flash[:colour] == :valid %>
+        <h2 style="color: greenyellow"><%= flash[:notice] %></h2>
+    <% elsif flash[:colour] == :invalid %>
+        <h2 style="color:red"><%= flash[:notice] %></h2>
+    <% else %>
+        <h2 style="color: grey"><%= flash[:notice] %></h2>
+    <% end %>
+    <% if session[:user_id] %>
+        <%= link_to :Home, home_path %>
+        <%= link_to :Logout, logout_path %>
+    <% else %>
+        <%= link_to :Signup, signup_path %>
+        <%= link_to :Login, login_path %>
+    <% end %>
+    <br/>
+
+<%= yield %>
+
+</body>
+</html>

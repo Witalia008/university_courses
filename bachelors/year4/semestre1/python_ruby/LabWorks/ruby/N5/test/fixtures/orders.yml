@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  item_id: 
+  count: 1
+  price: 1.5
+  pending: false
+
+two:
+  user_id: 
+  item_id: 
+  count: 1
+  price: 1.5
+  pending: false

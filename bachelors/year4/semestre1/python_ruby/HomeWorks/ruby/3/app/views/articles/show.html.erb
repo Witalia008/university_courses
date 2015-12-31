@@ -1,0 +1,16 @@
+<h1><%= @article.topic %></h1>
+<p>
+  <%= @article.text %>
+</p>
+
+<h2>Comments:</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<br/>
+<% if @user.role.role_name == 'ADMIN' %>
+    <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
+<%= link_to 'Back', articles_path %>

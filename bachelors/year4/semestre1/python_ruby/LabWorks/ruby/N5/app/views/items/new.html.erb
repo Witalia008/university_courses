@@ -1,0 +1,36 @@
+<h1>New Item</h1>
+
+<%= form_for([@group, @item]) do |f| %>
+    <p>
+      <%= f.label :item_name %><br/>
+      <%= f.text_field :item_name %>
+    </p>
+    <p>
+      <%= f.label :short_descr %><br/>
+      <%= f.text_field :short_descr %>
+    </p>
+    <p>
+      <%= f.label :image %><br/>
+      <%= f.file_field :image %>
+    </p>
+    <p>
+      <%= f.label :image_alt %><br/>
+      <%= f.text_field :image_alt %>
+    </p>
+    <p>
+      <%= f.label :price %><br/>
+      <%= f.number_field :price, :step => 0.01 %>
+    </p>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.label :keywords %><br/>
+      <%= f.text_field :keywords %>
+    </p>
+
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+<% end %>

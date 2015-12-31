@@ -1,0 +1,74 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  en_locale_name: 'EN'
+  site_title: 'Payments'
+  login_welcome: "Welcome again! You logged in as %{user}"
+  invalid_credentials: 'Invalid username or password'
+  sign_up: 'Sign Up'
+  sign_up_submit: 'Go!'
+  signup_pagen: 'UserAuth | Signup'
+  log_in: 'Log In'
+  log_in_submit: 'Login'
+  login_pagen: 'UserAuth | Login'
+  home: 'Home'
+  admin: 'Admin'
+  profile: 'Profile'
+  settings: 'Settings'
+  log_out: 'Log out'
+  list_of_users: 'Listing users'
+  view: 'View'
+
+  accounts: "Accounts of"
+  my_accounts: "My Accounts"
+  unblock: "Unblock"
+  block: "Block"
+  create_new: "Create New"
+  back: "Back"
+  credit_cards: "Credit Cards"
+  blocked: "Blocked"
+  balance: "Balance"
+  no: "no"
+  yes: "yes"
+  credit_card: "Credit Card"
+  account: "Account"
+  owner: "Owner"
+  cards: "Cards"
+  change: "Change"
+  incorrect_balance_delta: "Incorrect balance delta"
+  changed: "Changed"
+  unblocked: "Unblocked"
+  cannot_be_done: "Cannot be done"
+  created: "Created"
+
+  username_or_email: "Username or Email"
+  login_password: "Password"
+  balance_delta: "Balance change"
+  username: "Username"
+
+  helpers:
+    label:
+      user:
+        username: 'Username'
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: 'Confirm password'

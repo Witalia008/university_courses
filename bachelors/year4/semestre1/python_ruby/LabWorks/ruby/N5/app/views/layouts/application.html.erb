@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rlw5</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= yield :headers %>
+</head>
+<body>
+
+    <div class="Main_Header">
+      <h1><%= link_to 'Car Parts', index_path, style: 'text-decoration:none; color: white' %></h1>
+      <ul class="nav">
+        <li><%= link_to 'Trolley', user_trolley_path(@user), class: 'nav_links' %></li>
+        |
+        <li><%= link_to 'Index', index_path, class: 'nav_links' %></li>
+        <li><%= link_to 'News', news_index_path, class: 'nav_links' %></li>
+        <li><%= link_to 'Search', search_path, class: 'nav_links' %></li>
+        <li><%= link_to 'About', about_path, class: 'nav_links' %></li>
+        <li><%= link_to 'Contact us', contact_path, class: 'nav_links' %></li>
+        |
+        <% if session[:user_id] %>
+            <li><%= link_to 'Home', home_path, class: 'nav_links' %></li>
+            <li><%= link_to 'Profile', user_path(session[:user_id]), class: 'nav_links' %></li>
+            <li><%= link_to 'Logout', logout_path, class: 'nav_links' %></li>
+        <% else %>
+            <li><%= link_to 'Sign up', signup_path, class: 'nav_links' %></li>
+            <li><%= link_to 'Log in', login_path, class: 'nav_links' %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <% if flash[:notice] %>
+        <% if flash[:colour] == 'valid' %>
+            <div class="valid_notice">
+              <p><%= flash[:notice] %></p>
+            </div>
+        <% elsif flash[:colour] == 'invalid' %>
+            <div class="invalid_notice">
+              <p><%= flash[:notice] %></p>
+            </div>
+        <% else %>
+            <div class="notice">
+              <p><%= flash[:notice] %></p>
+            </div>
+        <% end %>
+    <% end %>
+
+
+    <div class="page">
+      <div class="left-panel">
+        <h1>Menu</h1>
+        <% @groups_top.each do |group| %>
+            <%= link_to group.group_name, group_path(group), class: 'menu_link' %><br/>
+        <% end %>
+        <% if @is_admin %>
+            <%= link_to 'Create Group', new_group_path %>
+        <% end %>
+        <h1>Contact us</h1>
+        <%= render 'messages/new' %>
+        <h1>Our Contacts:</h1>
+        <ul>
+          <li>E-mail: username@ukr.net</li>
+        </ul>
+        <h1>Search</h1>
+        <%= render 'general/search' %>
+      </div>
+      <div class="content">
+
+        <%= yield %>
+
+      </div>
+    </div>
+
+</body>
+<footer>
+  <hr/>
+  <strong>Witalia, Inc. 2015-2015</strong>
+</footer>
+</html>

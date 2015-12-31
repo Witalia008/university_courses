@@ -1,0 +1,20 @@
+<%= form_tag({:controller => 'general', :action => 'update'}, :method => :put) do %>
+  <%= hidden_field_tag :password, @pass %>
+  <%= submit_tag :Save %>
+  <table>
+    <tr>
+      <th></th>
+      <% @cols.times do |id| %>
+        <th><%= id %></th>
+      <% end %>
+    </tr>
+    <% @rows.times do |row_index| %>
+        <tr>
+          <th><%= row_index %></th>
+          <% @cols.times do |i| %>
+              <td><%= text_field_tag "#{row_index},#{i}", @sheet[row_index, i] %></td>
+          <% end %>
+        </tr>
+    <% end %>
+  </table>
+<% end %>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<OldCards>
+  <card id="card1">
+    <theme>Nature</theme>
+    <type>Gift</type>
+    <country>Ukraine</country>
+    <year>2015</year>
+    <author>Myself</author>
+    <author>My friend</author>
+    <valuable>historical</valuable>
+  </card>
+  <card id="card2">
+    <theme>People</theme>
+    <type>Advertisement</type>
+    <country>Germany</country>
+    <year>2014</year>
+    <valuable>historical</valuable>
+  </card>
+  <card id="card3">
+    <theme>People</theme>
+    <type>Advertisement</type>
+    <country>Germany</country>
+    <year>2014</year>
+    <valuable>historical</valuable>
+  </card>
+  <card id="card4">
+    <theme>People</theme>
+    <type>Advertisement</type>
+    <country>Germany</country>
+    <year>2014</year>
+    <valuable>historical</valuable>
+  </card>
+</OldCards>

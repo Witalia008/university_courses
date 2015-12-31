@@ -1,0 +1,32 @@
+<h1>Sign Up</h1>
+<%= form_for(@user) do |f| %>
+    <p>
+      <%= f.label :username %><br/>
+      <%= f.text_field :username %>
+    </p>
+    <p>
+      <%= f.label :email %><br/>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :password %><br/>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br/>
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+      <%= f.submit :register %>
+    </p>
+<% end %>
+
+<div id="error_explanation">
+  <ul>
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      <% end %>
+  </ul>
+</div>

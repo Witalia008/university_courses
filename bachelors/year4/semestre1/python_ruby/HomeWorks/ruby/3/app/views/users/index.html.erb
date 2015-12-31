@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+    <%= form_tag(user_edit_role_path(user)) do %>
+        <%= user.username %>
+        <%= collection_select :role, :id, Role.all, :id, :role_name, {:selected => user.role.id} %>
+        <%= submit_tag :Change %>
+    <% end %>
+<% end %>
+<%= link_to 'Back', home_path %>

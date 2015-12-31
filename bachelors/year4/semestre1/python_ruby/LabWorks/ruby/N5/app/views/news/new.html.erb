@@ -1,0 +1,34 @@
+<h1>Create news</h1>
+<%= form_for @news, :html => {:multipart => true} do |f| %>
+    <p>
+      <%= f.label :header %><br/>
+      <%= f.text_field :header %>
+    </p>
+    <p>
+      <%= f.label :preview %><br/>
+      <%= f.text_field :preview %>
+    </p>
+    <p>
+      <%= f.label :image %><br/>
+      <%= f.file_field :image %>
+    </p>
+    <p>
+      <%= f.label :image_alt %><br/>
+      <%= f.text_field :image_alt %>
+    </p>
+    <p>
+      <%= f.label :full_text %><br/>
+      <%= f.text_area :full_text %>
+    </p>
+    <p>
+      <%= f.label :keywords %><br/>
+      <%= f.text_field :keywords %>
+    </p>
+
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+<% end %>
+
+<br/>
+<%= link_to 'Back', news_index_path %>

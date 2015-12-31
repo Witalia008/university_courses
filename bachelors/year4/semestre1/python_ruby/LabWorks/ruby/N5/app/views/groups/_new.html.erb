@@ -1,0 +1,25 @@
+<%= form_for(@group, url: url) do |f| %>
+    <p>
+      <%= f.label :group_name %><br/>
+      <%= f.text_field :group_name %>
+    </p>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.label :image %><br/>
+      <%= f.file_field :image %>
+    </p>
+    <p>
+      <%= f.label :image_alt %><br/>
+      <%= f.text_field :image_alt %>
+    </p>
+    <p>
+      <%= f.label :keywords %><br/>
+      <%= f.text_field :keywords %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+<% end %>

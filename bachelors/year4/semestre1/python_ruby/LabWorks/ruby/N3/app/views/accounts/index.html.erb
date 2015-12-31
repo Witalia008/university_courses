@@ -1,0 +1,8 @@
+<div class="Sign_Form">
+    <h1 class="User_Header"><%= t :accounts %> <%= @user.username %></h1>
+    <% @user.accounts.each do |acc| %>
+        <h2><%= link_to ((t :account).to_s + ' ' + acc.id.to_s), edit_user_account_path(@user, acc) %></h2>
+    <% end %>
+    <%= link_to (t :create_new), user_accounts_path(@user), method: :post %><br/>
+    <%= link_to (t :back), home_path %><br/>
+</div>

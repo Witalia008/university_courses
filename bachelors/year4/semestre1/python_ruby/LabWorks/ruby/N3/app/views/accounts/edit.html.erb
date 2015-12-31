@@ -1,0 +1,25 @@
+<div class="Sign_Form">
+  <%= t :account %>: <%= @account.id %><br/>
+  <%= t :blocked %>: <%= @account.blocked ? (t :yes) : (t :no) %><br/>
+  <%= t :balance %>: <%= @account.balance %><br/>
+  <%= t :owner %>: <%= @account.user.username %><br/>
+  <% if @current_user.role.rolename == 'ADMIN' %>
+      <%= link_to (t :unblock), user_account_unblock_path(@user, @account), method: :post %><br/>
+  <% end %>
+  <%= link_to (t :block), user_account_block_path(@user, @account), method: :post %><br/>
+
+  <%= form_tag user_account_update_balance_path(@user, @account) do |f| %>
+      <%= label_tag t(:balance_delta) %>
+      <%= text_field_tag :balance_delta %>
+      <%= submit_tag (t :change) %>
+  <% end %>
+
+  <h2><%= t :credit_cards%>:</h2>
+  <% @cards.each do |card| %>
+      <%= link_to ((t :credit_card).to_s + ' ' + card.id.to_s), user_account_credit_card_path(@user, @account, card) %>
+  <% end %>
+  <br/>
+  <%= link_to (t :create_new), user_account_credit_cards_path(@user, @account), method: :post %><br/>
+
+  <%= link_to (t :back), user_accounts_path(@user) %>
+</div>

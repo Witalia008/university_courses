@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rlw3</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <div class="Main_Header">
+      <h1><%= t :site_title %></h1>
+      <ul class="nav">
+          <% if session[:user_id] %>
+            <% if @user.role.rolename == 'ADMIN' %>
+              <li><%= link_to (t :admin), rails_admin_path, class: 'nav_links' %></li>
+            <% end %>
+            <li><%= link_to (t :home), home_path, class: 'nav_links' %></li>
+            <li><%= link_to (t :profile), profile_path, class: 'nav_links' %></li>
+            <li><%= link_to (t :settings), settings_path, class: 'nav_links' %></li>
+            <li><%= link_to (t :log_out), logout_path, class: 'nav_links' %></li>
+          <% else %>
+            <li><%= link_to (t :sign_up), signup_path, class: 'nav_links' %></li>
+            <li><%= link_to (t :log_in), login_path, class: 'nav_links' %></li>
+          <% end %>
+        |
+        <li><%= link_to (t :en_locale_name, :locale => :en), locale: :en %></li>
+        <li><%= link_to (t :uk_locale_name, :locale => :uk), locale: :uk %></li>
+      </ul>
+    </div>
+
+    <% if flash[:colour] == 'valid' %>
+        <div class="valid_notice">
+          <p><%= flash[:notice] %></p>
+        </div>
+    <% elsif flash[:colour] == 'invalid' %>
+        <div class="invalid_notice">
+          <p><%= flash[:notice] %></p>
+        </div>
+    <% else %>
+        <div class="notice">
+          <p><%= flash[:notice] %></p>
+        </div>
+    <% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

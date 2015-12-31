@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Medicine>
+    <medicament>
+        <medname>Aspirin</medname>
+        <price>1</price>
+        <dosage>10</dosage>
+        <visual>
+            <colour>white</colour>
+            <consistence>solid</consistence>
+            <application>flu</application>
+        </visual>
+    </medicament>
+    <medicament>
+        <medname>No-Spa</medname>
+        <price>2</price>
+        <dosage>5</dosage>
+        <visual>
+            <colour>yellow</colour>
+            <consistence>solid</consistence>
+            <application>stomach ache</application>
+        </visual>
+    </medicament>
+</Medicine>

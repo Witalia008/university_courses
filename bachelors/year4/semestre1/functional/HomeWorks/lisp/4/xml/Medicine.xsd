@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Medicine" type="MedicineType"/>
+    <xs:complexType name="MedicineType">
+        <xs:sequence>
+            <xs:element type="medicamentType" name="medicament" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="medicamentType">
+        <xs:sequence>
+            <xs:element name="medname" type="xs:string"/>
+            <xs:element name="price" type="xs:nonNegativeInteger"/>
+            <xs:element name="dosage" type="xs:nonNegativeInteger"/>
+            <xs:element type="visualType" name="visual"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="visualType">
+        <xs:sequence>
+            <xs:element name="colour">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="white"/>
+                        <xs:enumeration value="yellow"/>
+                        <xs:enumeration value="green"/>
+                        <xs:enumeration value="red"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="consistence">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="solid"/>
+                        <xs:enumeration value="fluid"/>
+                        <xs:enumeration value="dust"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="application" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

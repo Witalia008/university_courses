@@ -1,0 +1,9 @@
+name:              hhw3
+version:           1.0
+Build-Type:        Simple
+cabal-version:     >= 1.2
+
+executable hhw3
+  main-is:         Main.hs
+  hs-source-dirs:  src
+  build-depends:   base, deepseq, random-shuffle, random

@@ -1,0 +1,1 @@
+(resolve-host-ipaddr "www.lisp.org")

@@ -1,0 +1,11 @@
+<!DOCTYPE Medicine [
+        <!ELEMENT Medicine (medicament)*>
+        <!ELEMENT medicament (medname|price|dosage|visual)*>
+        <!ELEMENT medname (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        <!ELEMENT dosage (#PCDATA)>
+        <!ELEMENT visual (colour|consistence|applications)*>
+        <!ELEMENT colour (#PCDATA)>
+        <!ELEMENT consistence (#PCDATA)>
+        <!ELEMENT application (#PCDATA)>
+        ]>

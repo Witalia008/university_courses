@@ -1,0 +1,10 @@
+name:              hhw7
+version:           1.0
+Build-Type:        Simple
+cabal-version:     >= 1.2
+
+executable hhw7
+  GHC-OPTIONS:     -threaded
+  main-is:         Main.hs
+  hs-source-dirs:  src
+  build-depends:   base, happstack-server, blaze-markup, blaze-html, mtl, text, hsp, happstack-hsp, hsx2hs

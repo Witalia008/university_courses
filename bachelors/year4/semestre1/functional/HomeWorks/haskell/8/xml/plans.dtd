@@ -1,0 +1,18 @@
+<!DOCTYPE Plans [
+        <!ELEMENT Plans (plan)*>
+        <!ELEMENT plan (planname|provider|payroll|callprices|smsprice|parameters)*>
+        <!ATTLIST plan
+                id CDATA #REQUIRED>
+        <!ELEMENT planname (#PCDATA)>
+        <!ELEMENT provider (#PCDATA)>
+        <!ELEMENT payroll (#PCDATA)>
+        <!ELEMENT callprices (inside|outside|landline)*>
+        <!ELEMENT inside (#PCDATA)>
+        <!ELEMENT outside (#PCDATA)>
+        <!ELEMENT landline (#PCDATA)>
+        <!ELEMENT smsprice (#PCDATA)>
+        <!ELEMENT parameters (favouriteNumber|tarification|applyCost)*>
+        <!ELEMENT favouriteNumber (#PCDATA)>
+        <!ELEMENT tarification (#PCDATA)>
+        <!ELEMENT applyCost (#PCDATA)>
+        ]>

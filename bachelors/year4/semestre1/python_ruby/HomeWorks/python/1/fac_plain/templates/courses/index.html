@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ page_name }}</h1>
+    <h2>Current:</h2>
+    <ul>
+        {% for course in courses %}
+            <li>
+                <a href="{% url course_info course_pk=course.pk %}">{{ course.courseName }}</a>
+                {% if course.opened %}
+                    (<a href="{% url course_signup course_pk=course.pk %}">Signup</a>)
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Past:</h2>
+    <ul>
+        {% for course in pastc %}
+            <li><a href="{% url course_info course_pk=course.pk %}">{{ course.courseName }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <br/>
+    <a href="{% url index %}">Back</a>
+{% endblock %}

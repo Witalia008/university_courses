@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Car details' %}</h1>
+
+    <div>
+        <p>
+            {% trans 'Name' %}: {{ car.car_name }}<br/>
+            {% trans 'Year' %}: {{ car.year }}<br/>
+            {% trans 'Seat number' %}: {{ car.seat_number }}<br/>
+            {% trans 'Is rented' %}: {{ car.is_rented }}<br/>
+        </p>
+    </div>
+
+    {% if car.is_rented == False %}
+        <br/>
+        <a href="{% url 'rent' pk=car.pk %}">{% trans 'Rent' %}</a>
+    {% endif %}
+    <br/>
+    <a href="{% url 'cars' %}">{% trans 'Back' %}</a>
+{% endblock %}

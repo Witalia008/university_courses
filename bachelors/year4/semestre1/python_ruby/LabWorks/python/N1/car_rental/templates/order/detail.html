@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Order details' %}</h1>
+
+    <div>
+        <p>
+            {% trans 'Car' %}: {{ order.car }}<br/>
+            {% trans 'User' %}: {{ order.customer }}<br/>
+            {% trans 'Placed' %}: {{ order.date_placed|date:"F j, Y" }}<br/>
+            {% trans 'Passport number' %}: {{ order.passport_number }}<br/>
+            {% trans 'Term' %}: {{ order.term }}<br/>
+            {% trans 'Paid' %}: {{ order.was_paid }}<br/>
+            {% trans 'Accepted' %}: {{ order.accepted }}<br/>
+            {% if order.rej_reason %}
+                {% trans 'Reason' %}: {{ order.rej_reason }}<br/>
+            {% endif %}
+            {% if order.accepted %}
+                {% trans 'Returned' %}: {{ order.returned }}<br/>
+            {% endif %}
+            {% if user.is_superuser and order.returned == False %}
+                {% if order.accepted == None %}
+                    <a href="{% url 'accept_order' user_pk=usr.pk order_pk=order.pk %}">{% trans 'Accept' %}</a><br/>
+                    <form action="{% url 'decline_order' user_pk=usr.pk order_pk=order.pk %}" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="{% trans 'Decline' %}"/>
+                    </form>
+                {% endif %}
+                {% if not order.returned and order.accepted != False and order.was_paid == True %}
+                    <a href="{% url 'close_order' user_pk=usr.pk order_pk=order.pk %}">{% trans 'Close' %}</a><br/>
+                {% endif %}
+            {% endif %}
+        </p>
+    </div>
+
+    {% if order.accepted and order.was_paid == False %}
+        <br/>
+        <a href="{% url 'pay_order' user_pk=user.pk order_pk=order.pk %}">{% trans 'Pay' %}</a>
+    {% endif %}
+    <br/>
+    <a href="{% url 'orders' user_pk=usr.pk %}">{% trans 'Back' %}</a>
+{% endblock %}

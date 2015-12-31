@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>My Marks</h1>
+    <ul>
+        {% for mark in marks %}
+            <li>
+                <a href="{% url course_info  course_pk=mark.course.pk %}">{{ mark }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Orders of' %} {{ usr }}</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                <a href="{% url 'order_detail' user_pk=user.pk order_pk=order.pk %}">{{ order }}</a>
+                {% if order.accepted and order.was_paid == False %}
+                    <a href="{% url 'pay_order' user_pk=user.pk order_pk=order.pk %}">{% trans 'Pay' %}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">{% trans 'Back' %}</a>
+{% endblock %}

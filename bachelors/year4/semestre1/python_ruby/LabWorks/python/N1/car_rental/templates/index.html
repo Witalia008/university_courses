@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Home' %}</h1>
+    <a href="{% url 'cars' %}">{% trans 'Cars' %}</a><br/>
+    <a href="{% url 'orders' user_pk=user.pk %}">{% trans 'Orders' %}</a><br/>
+    <a href="{% url 'bills' user_pk=user.pk %}">{% trans 'Bills' %}</a><br/>
+    {% if user.is_superuser %}
+        <a href="{% url 'all_users' %}">{% trans 'Users' %}</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="socket.io.js"></script>
+        <script>
+            window.onload = function () {
+                chat = new io.connect('http://' + window.location.host);
+                chat.on('disconnect', function () {
+                    chat.socket.reconnect();
+                });
+                chat.on('message', function(data) {
+                    $('#chat').append('<div>' + data + '</div>');
+                });
+
+                $('#msg').keyup(function(event){
+                    if (event.keyCode == 13) {
+                        sendMessage();
+                    }
+                });
+                $('#uname').keyup(function(event){
+                    if (event.keyCode == 13) {
+                        register();
+                    }
+                });
+                $('#main').hide();
+                $('#uname').focus();
+            };
+            function sendMessage() {
+                var message = $('#msg');
+                chat.emit('message', message.val(), function() {
+                    message.val('');
+                });
+            }
+            function register() {
+                var uname = $('#uname').val();
+                chat.emit('register', uname, function() {
+//                    $('#intro').hide();
+                    $('#main').show();
+                    $('#msg').focus();
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="intro">
+            <label for="uname">Enter your name:</label>
+            <input id="uname">
+            <input type="button" onclick="register()" value="OK"/>
+        </div>
+        <div id="main">
+            <h3>Chat!</h3>
+            <div id="chat" style="width: 60em; height: 20em; overflow:auto; border: 1px solid black">
+            </div>
+            <label for="msg">Your message: </label>
+            <input id="msg" size="110"/>
+            <input type="button" onclick="sendMessage()" value="Send!"/>
+        </div>
+    </body>
+</html>

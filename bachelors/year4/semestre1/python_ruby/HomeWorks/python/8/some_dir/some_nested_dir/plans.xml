@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Plans>
+    <plan id="plan1">
+        <planname>Simple</planname>
+        <provider>att</provider>
+        <payroll>100</payroll>
+        <callprices>
+            <inside>5</inside>
+            <outside>10</outside>
+            <landline>15</landline>
+        </callprices>
+        <smsprice>30</smsprice>
+        <parameters>
+            <favouriteNumber>10</favouriteNumber>
+            <tarification>60</tarification>
+            <applyCost>100</applyCost>
+        </parameters>
+    </plan>
+    <plan id="plan2">
+        <planname>Advanced</planname>
+        <provider>att</provider>
+        <payroll>1000</payroll>
+        <callprices>
+            <inside>1</inside>
+            <outside>2</outside>
+            <landline>2</landline>
+        </callprices>
+        <smsprice>2</smsprice>
+        <parameters>
+            <favouriteNumber>10</favouriteNumber>
+            <tarification>1</tarification>
+            <applyCost>50</applyCost>
+        </parameters>
+    </plan>
+    <plan id="plan3">
+        <planname>Simple</planname>
+        <provider>T-Mobile</provider>
+        <payroll>200</payroll>
+        <callprices>
+            <inside>3</inside>
+            <outside>6</outside>
+            <landline>7</landline>
+        </callprices>
+        <smsprice>40</smsprice>
+        <parameters>
+            <favouriteNumber>0</favouriteNumber>
+            <tarification>1</tarification>
+            <applyCost>100</applyCost>
+        </parameters>
+    </plan>
+    <plan id="plan4">
+        <planname>Simple</planname>
+        <provider>Verizon</provider>
+        <payroll>150</payroll>
+        <callprices>
+            <inside>0</inside>
+            <outside>20</outside>
+            <landline>20</landline>
+        </callprices>
+        <smsprice>40</smsprice>
+        <parameters>
+            <favouriteNumber>10</favouriteNumber>
+            <tarification>60</tarification>
+            <applyCost>100</applyCost>
+        </parameters>
+    </plan>
+</Plans>

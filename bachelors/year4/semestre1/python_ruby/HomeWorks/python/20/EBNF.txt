@@ -1,0 +1,35 @@
+PROGRAM = {OPERATOR} ;
+OPERATOR_LABEL = [LABELNAME, "#"], OPERATOR ;
+OPERATOR = ASSIGNMENT | GOTO | CONDITIONAL | INPUT | OUTPUT | FINISH ;
+
+LETTER = 'a'..'z' | 'A'..'Z' ;
+DIGIT = '0'..'9' ;
+RELATION = "<", ">", "<=", ">=", "!=", "=" ;
+NUMBER = ["-"], DIGIT, {DIGIT} ;
+
+
+ASSIGNMENT = VARNAME, ":=", EXPR ;
+VARNAME = LETTER ;
+EXPR = MULT_EXPR {"+"|"-", MULT_EXPR} ;
+MULT_EXPR = FUNC {"*"|":", FUNC} ;
+FUNC = OPER | "abs", OPER
+OPER = NUMBER | VARNAME | "(", EXPR, ")" ;
+
+
+GOTO = "go", LABELNAME ;
+LABELNAME = DIGIT, {DIGIT} ;
+
+
+CONDITIONAL = "if", "(", CONDITION, ")", OPERATOR
+CONDITION = EXPR, RELATION, EXPR
+
+
+INPUT = "get", "(", VARNAME, ")" ;
+
+
+OUTPUT = "put", "(", EXPR | LITERAL, ")" ;
+LITERAL = "$", {LITSYMBOL} ;
+LITSYMBOL = ? all visible characters ? - ")"
+
+
+FINISH = "finish";

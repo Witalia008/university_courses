@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Bill details' %}</h1>
+    <div>
+        <p>
+            {% trans 'Order' %}: <a href="{% url 'order_detail' user_pk=usr.pk order_pk=bill.order.pk %}">{{ bill.order }}</a><br/>
+            {% trans 'Additional charge' %}: {{ bill.add_price }}<br/>
+            {% if bill.add_price %}
+                {% trans 'Reason' %}: {{ bill.add_price_reason }}<br/>
+                {% trans 'Paid' %}: {{ bill.was_paid }}<br/>
+                {% if bill.was_paid == False %}
+                    <a href="{% url 'pay_bill' user_pk=usr.pk bill_pk=bill.pk %}">{% trans 'Pay' %}</a>
+                {% endif %}
+            {% endif %}
+        </p>
+    </div>
+
+    <br/>
+    <a href="{% url 'bills' user_pk=usr.pk %}">{% trans 'Back' %}</a>
+{% endblock %}

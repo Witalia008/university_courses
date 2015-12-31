@@ -1,0 +1,18 @@
+http://stackoverflow.com/questions/4910385/django-version-in-gae
+http://stackoverflow.com/questions/33306357/module-main-has-no-attribute-application-google-app-engine-python-with-djan
+
+
+use MySQL
+add MySQLdb into app.yaml
+install MySQL-python
+
+Django 1.4
+{% url index %} instead of {% url 'index' %}
+
+
+manage.py syncdb --- each time to update tables
+http://stackoverflow.com/questions/2606194/django-error-message-add-a-related-name-argument-to-the-definition
+
+metaclasses:
+https://code.djangoproject.com/wiki/DynamicModels
+http://stackoverflow.com/questions/7320705/python-missing-class-attribute-module-when-using-type

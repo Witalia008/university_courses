@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load filters %}
+
+{% block content %}
+    <h1>Course Info</h1>
+    Course Name: <strong>{{ course.courseName }}</strong><br/>
+    Is Opened: <strong>{{ course.opened }}</strong><br/>
+    Starting Date: <strong>{{ course.startDate }}</strong><br/>
+    End Date: <strong>{{ course.endDate }}</strong><br/>
+    Teachers: <strong>{{ course.teachers.all|join_by_attr:"username" }}</strong><br/>
+    Students: <strong>{{ course.students.all|join_by_attr:"username" }}</strong><br/>
+    {% if course.opened %}
+        <a href="{% url course_signup course_pk=course.pk %}">Signup</a><br/>
+    {% endif %}
+
+    <br/>
+    <a href="{% url all_courses %}">Back</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Rent a car' %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.car }}<br/>
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Place' %}"/>
+    </form>
+    <br/>
+    <a href="{% url 'cars' %}">{% trans 'Back' %}</a>
+{% endblock %}

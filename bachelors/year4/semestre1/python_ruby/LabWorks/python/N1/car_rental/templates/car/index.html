@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Cars' %}</h1>
+    <ul>
+        {% for car in cars %}
+            <li>
+                <a href="{% url 'car_detail' pk=car.pk %}">{{ car }}</a>
+                {% if user.is_authenticated and car.is_rented == False %}
+                    <a href="{% url 'rent' pk=car.pk %}">{% trans 'Rent' %}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back</a>
+{% endblock %}

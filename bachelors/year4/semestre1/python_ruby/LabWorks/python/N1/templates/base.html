@@ -1,0 +1,29 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans 'Rent a car' %}</title>
+</head>
+<body>
+    <div>
+        <a href="/en/">{% trans 'English' %}</a>
+        <a href="/uk/">{% trans 'Ukrainian' %}</a>
+    </div>
+    <div>
+        {{ user }}
+        {% if user.is_anonymous %}
+            <a href="{% url 'login' %}">{% trans 'Login' %}</a>
+        {% else %}
+            <a href="{% url 'index' %}">{% trans 'Home' %}</a>
+            <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+            {% if user.is_staff %}
+                <a href="/admin/">{% trans 'Manage' %}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

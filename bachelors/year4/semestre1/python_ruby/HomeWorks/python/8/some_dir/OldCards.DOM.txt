@@ -1,0 +1,93 @@
+OldCards(
+    cards=[
+        card(
+            years=[
+                year(
+                    content=[
+                        2015, ]), ]
+            authors=[
+                author(
+                    content=[
+                        Myself, ]), 
+                author(
+                    content=[
+                        My friend, ]), ]
+            valuables=[
+                valuable(
+                    content=[
+                        historical, ]), ]
+            countrys=[
+                country(
+                    content=[
+                        Ukraine, ]), ]
+            themes=[
+                theme(
+                    content=[
+                        Nature, ]), ]
+            types=[
+                type(
+                    content=[
+                        Gift, ]), ]), 
+        card(
+            years=[
+                year(
+                    content=[
+                        2014, ]), ]
+            valuables=[
+                valuable(
+                    content=[
+                        historical, ]), ]
+            countrys=[
+                country(
+                    content=[
+                        Germany, ]), ]
+            themes=[
+                theme(
+                    content=[
+                        People, ]), ]
+            types=[
+                type(
+                    content=[
+                        Advertisement, ]), ]), 
+        card(
+            years=[
+                year(
+                    content=[
+                        2014, ]), ]
+            valuables=[
+                valuable(
+                    content=[
+                        historical, ]), ]
+            countrys=[
+                country(
+                    content=[
+                        Germany, ]), ]
+            themes=[
+                theme(
+                    content=[
+                        People, ]), ]
+            types=[
+                type(
+                    content=[
+                        Advertisement, ]), ]), 
+        card(
+            years=[
+                year(
+                    content=[
+                        2014, ]), ]
+            valuables=[
+                valuable(
+                    content=[
+                        historical, ]), ]
+            countrys=[
+                country(
+                    content=[
+                        Germany, ]), ]
+            themes=[
+                theme(
+                    content=[
+                        People, ]), ]
+            types=[
+                type(
+                    content=[
+                        Advertisement, ]), ]), ])

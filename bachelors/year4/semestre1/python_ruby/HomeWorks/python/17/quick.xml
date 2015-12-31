@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Sorter>
+    <name>Quick Sort</name>
+    <methodName>quick_sort</methodName>
+    <source>
+import random
+def quick_sort(a):
+    if len(a) &lt; 4:
+        return list(sorted(a)) or []
+    pivot = random.choice(a)
+    left = [i for i in a if not i &gt; pivot]
+    right = [i for i in a if i > pivot]
+    return quick_sort(left) + quick_sort(right)
+    </source>
+</Sorter>

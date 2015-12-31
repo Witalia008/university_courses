@@ -1,0 +1,3 @@
+include phw13/config/deployment.ini_tmpl
+recursive-include phw13/public *
+recursive-include phw13/templates *

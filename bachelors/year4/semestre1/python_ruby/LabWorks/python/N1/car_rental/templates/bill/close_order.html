@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Close order' %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Ok' %}"/>
+    </form>
+    <a href="{% url 'order_detail' user_pk=usr.pk order_pk=form.order.pk %}">{% trans 'Back' %}</a>
+{% endblock %}

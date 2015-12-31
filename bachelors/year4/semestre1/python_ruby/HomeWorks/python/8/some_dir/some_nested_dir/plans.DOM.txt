@@ -1,0 +1,182 @@
+Plans(
+    plans=[
+        plan(
+            smsprices=[
+                smsprice(
+                    content=[
+                        30, ]), ]
+            parameterss=[
+                parameters(
+                    tarifications=[
+                        tarification(
+                            content=[
+                                60, ]), ]
+                    favouriteNumbers=[
+                        favouriteNumber(
+                            content=[
+                                10, ]), ]
+                    applyCosts=[
+                        applyCost(
+                            content=[
+                                100, ]), ]), ]
+            plannames=[
+                planname(
+                    content=[
+                        Simple, ]), ]
+            callpricess=[
+                callprices(
+                    outsides=[
+                        outside(
+                            content=[
+                                10, ]), ]
+                    landlines=[
+                        landline(
+                            content=[
+                                15, ]), ]
+                    insides=[
+                        inside(
+                            content=[
+                                5, ]), ]), ]
+            payrolls=[
+                payroll(
+                    content=[
+                        100, ]), ]
+            providers=[
+                provider(
+                    content=[
+                        att, ]), ]), 
+        plan(
+            smsprices=[
+                smsprice(
+                    content=[
+                        2, ]), ]
+            parameterss=[
+                parameters(
+                    tarifications=[
+                        tarification(
+                            content=[
+                                1, ]), ]
+                    favouriteNumbers=[
+                        favouriteNumber(
+                            content=[
+                                10, ]), ]
+                    applyCosts=[
+                        applyCost(
+                            content=[
+                                50, ]), ]), ]
+            plannames=[
+                planname(
+                    content=[
+                        Advanced, ]), ]
+            callpricess=[
+                callprices(
+                    outsides=[
+                        outside(
+                            content=[
+                                2, ]), ]
+                    landlines=[
+                        landline(
+                            content=[
+                                2, ]), ]
+                    insides=[
+                        inside(
+                            content=[
+                                1, ]), ]), ]
+            payrolls=[
+                payroll(
+                    content=[
+                        1000, ]), ]
+            providers=[
+                provider(
+                    content=[
+                        att, ]), ]), 
+        plan(
+            smsprices=[
+                smsprice(
+                    content=[
+                        40, ]), ]
+            parameterss=[
+                parameters(
+                    tarifications=[
+                        tarification(
+                            content=[
+                                1, ]), ]
+                    favouriteNumbers=[
+                        favouriteNumber(
+                            content=[
+                                0, ]), ]
+                    applyCosts=[
+                        applyCost(
+                            content=[
+                                100, ]), ]), ]
+            plannames=[
+                planname(
+                    content=[
+                        Simple, ]), ]
+            callpricess=[
+                callprices(
+                    outsides=[
+                        outside(
+                            content=[
+                                6, ]), ]
+                    landlines=[
+                        landline(
+                            content=[
+                                7, ]), ]
+                    insides=[
+                        inside(
+                            content=[
+                                3, ]), ]), ]
+            payrolls=[
+                payroll(
+                    content=[
+                        200, ]), ]
+            providers=[
+                provider(
+                    content=[
+                        T-Mobile, ]), ]), 
+        plan(
+            smsprices=[
+                smsprice(
+                    content=[
+                        40, ]), ]
+            parameterss=[
+                parameters(
+                    tarifications=[
+                        tarification(
+                            content=[
+                                60, ]), ]
+                    favouriteNumbers=[
+                        favouriteNumber(
+                            content=[
+                                10, ]), ]
+                    applyCosts=[
+                        applyCost(
+                            content=[
+                                100, ]), ]), ]
+            plannames=[
+                planname(
+                    content=[
+                        Simple, ]), ]
+            callpricess=[
+                callprices(
+                    outsides=[
+                        outside(
+                            content=[
+                                20, ]), ]
+                    landlines=[
+                        landline(
+                            content=[
+                                20, ]), ]
+                    insides=[
+                        inside(
+                            content=[
+                                0, ]), ]), ]
+            payrolls=[
+                payroll(
+                    content=[
+                        150, ]), ]
+            providers=[
+                provider(
+                    content=[
+                        Verizon, ]), ]), ])

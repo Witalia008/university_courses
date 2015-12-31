@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Input:</h1>
+    {% for pt in arr %}
+        {{ pt }}<br/>
+    {% endfor %}
+    <h1>Output:</h1>
+    {{ splines|join:"<br/>" }}
+    <h1>Out data:</h1>
+    {% for pt in res %}
+        {{ pt }}<br/>
+    {% endfor %}
+{% endblock %}

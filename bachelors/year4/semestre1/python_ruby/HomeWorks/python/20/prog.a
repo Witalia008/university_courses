@@ -1,0 +1,18 @@
+put($Hello, World)
+
+101#a := 10
+b := abs(-5) * 3 + a + 1000 - a : abs(3)
+
+
+if (b+a-abs(5) <= 5) a := 20
+
+get(c)
+if (2 = 1) finish
+
+get(d)
+
+if (2 != 0) go 0
+
+put(d)
+
+0#finish

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Sorter>
+    <name>Bubble Sort</name>
+    <methodName>bubble_sort</methodName>
+    <source>
+def bubble_sort(a):
+    n = len(a)
+    for i in range(n-1, -1, -1):
+        for j in range(0, i):
+            if a[j] > a[j+1]:
+                a[j], a[j+1] = a[j+1], a[j]
+    return a
+    </source>
+</Sorter>

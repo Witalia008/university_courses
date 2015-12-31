@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans 'Users' %}</h1>
+    <ul>
+        {% for usr in users %}
+            <li>
+                {{ usr }}
+                <a href="{% url 'orders' user_pk=usr.pk %}">{% trans 'Orders' %}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <br/>
+    <a href="{% url 'index' %}">{% trans 'Back' %}</a>
+{% endblock %}

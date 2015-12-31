@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets>
+    <layout>Table</layout>
+    <rows>3</rows>
+    <cols>4</cols>
+    <widget name="Label">
+        <text>This is label</text>
+        <rowStart>0</rowStart>
+        <rowFinish>1</rowFinish>
+        <colStart>0</colStart>
+        <colFinish>1</colFinish>
+    </widget>
+    <widget name="Button">
+        <label>
+Hello, World
+asdasd
+        </label>
+        <rowStart>1</rowStart>
+        <rowFinish>2</rowFinish>
+        <colStart>2</colStart>
+        <colFinish>3</colFinish>
+    </widget>
+    <widget name="Entry">
+        <text>This is entry</text>
+        <rowStart>1</rowStart>
+        <rowFinish>2</rowFinish>
+        <colStart>0</colStart>
+        <colFinish>2</colFinish>
+    </widget>
+    <widget name="ProgressBar">
+        <text>My Progress Bar</text>
+        <fraction>0.5</fraction>
+        <rowStart>2</rowStart>
+        <rowFinish>3</rowFinish>
+        <colStart>0</colStart>
+        <colFinish>4</colFinish>
+    </widget>
+    <widget name="Spinner">
+        <spinning>True</spinning>
+        <rowStart>0</rowStart>
+        <rowFinish>1</rowFinish>
+        <colStart>1</colStart>
+        <colFinish>2</colFinish>
+    </widget>
+</widgets>

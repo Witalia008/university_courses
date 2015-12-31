@@ -1,0 +1,78 @@
+<div>
+  <p>
+    <strong>Service type:</strong>
+    <%= service.service_name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= service.description %>
+  </p>
+
+  <% if local_assigns[:children].nil? %>
+    <p>
+      <strong>Price per hour for 1 child:</strong>
+      <%= service.nanny.price[0] %>
+    </p>
+    <% service.nanny.price[1..-1].each_with_index do |p, i| %>
+        <p>
+          <strong>Price per hour for <%= (i + 2).to_s %> children:</strong>
+          <%= p %>
+        </p>
+    <% end %>
+  <% else %>
+      <p>
+        <strong>Price per hour:</strong>
+        <%= service.nanny.price[children - 1] %>
+      </p>
+  <% end %>
+</div>
+
+<div>
+  <script>
+    function setup_time(date, time) {
+      _date = new Date(date + ' ' + time + ':00');
+      if (_date < new Date()) {
+        return;
+      }
+      _st = $('#order_start_time');
+      _end = $('#order_end_time');
+      if (_st.val() == '') {
+//        if (_end().val !== '' && _date > new Date(_end.val())) return;
+        _st.val(date + ' ' + time + ':00')
+      } else {
+        if (_st().val !== '' && _date < new Date(_st.val())) return;
+        _end.val(date + ' ' + time + ':00')
+      }
+    }
+  </script>
+  <%= calendar orders: @orders do |date, orders| %>
+      <%#= date %><br/>
+      <%#= orders.each do |o| %>
+        <%#= o.user_id.to_s%>
+      <%# end %>
+      <table>
+        <% orders.each do |o| %>
+          <%= o.to_s %>
+        <% end %>
+        <tr><th colspan="6"><%= date %></th></tr>
+        <% (0...24).to_a.in_groups_of(6, false) do |line| %>
+          <tr>
+            <% line.each do |hour| %>
+                <% if is_time_occupied(@orders, date, hour) %>
+                    <td bgcolor="#ccaaff">
+                      <%= hour %>
+                    </td>
+                <% else %>
+                    <td style="cursor: pointer"
+                        onclick="setup_time(<%= "'#{date}', '#{hour}'" %>)"
+                        bgcolor="#00ac00">
+                      <%= hour %>
+                    </td>
+                <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+  <% end %>
+</div>

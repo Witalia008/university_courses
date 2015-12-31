@@ -1,0 +1,5 @@
+<h2>Create new group</h2>
+
+<%= render 'form', url: groups_path(current_user), action: :Create %>
+
+<%= link_to 'Back', groups_path(current_user) %>

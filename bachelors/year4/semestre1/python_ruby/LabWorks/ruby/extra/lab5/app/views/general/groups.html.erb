@@ -1,0 +1,12 @@
+<ul>
+  <% @groups.each do |group| %>
+      <li>
+        <%= link_to "#{group.group_name} (#{group.creator.username}'s)",
+                    group_path(current_user, group) %>
+        <% if current_user %>
+          <%= link_to '(join)', group_join_path(current_user, group), method: :post %>
+        <% end %>
+
+      </li>
+  <% end %>
+</ul>

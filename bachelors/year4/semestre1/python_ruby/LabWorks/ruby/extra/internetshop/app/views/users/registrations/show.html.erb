@@ -1,0 +1,28 @@
+<style>
+  #image {
+    width: 22%;
+    float: left;
+  }
+  #info {
+    width: 60%;
+    float: left;
+    padding: 0 0 0 1%;
+  }
+</style>
+
+<br>
+  <%= image_tag get_user_image_path(@user), class: :avatar,
+                onerror: "avatar_error(this)" %>
+<div id="info">
+  <% if not @user.customer.nil? %>
+    <h1><%= @user.customer.full_name %></h1>
+    <h3><%= @user.email %></h3>
+  <% elsif not @user.worker.nil? %>
+    <h1><%= @user.worker.name %></h1>
+    <h3><%= @user.email %></h3>
+    <div id="desc">
+      <%= simple_format(@user.worker.description) %>
+    </div>
+  <% end %>
+  <%= link_to 'Selling services', user_services_path(@user) %>
+</div>

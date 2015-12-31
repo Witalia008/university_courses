@@ -1,0 +1,18 @@
+<h1><%= @local_user.username %>'s groups</h1>
+
+<ul>
+  <% @owned.each do |group| %>
+      <li><%= link_to group.group_name, group_path(@local_user, group) %></li>
+  <% end %>
+</ul>
+
+<h2>Is member of</h2>
+<ul>
+  <% @groups.each do |group| %>
+      <li><%= link_to group.group_name, group_path(@local_user, group) %></li>
+  <% end %>
+</ul>
+
+<% if myself %>
+  <%= button_to 'Add', new_group_path(current_user), class: 'basic-grey-btn', method: :get %>
+<% end %>

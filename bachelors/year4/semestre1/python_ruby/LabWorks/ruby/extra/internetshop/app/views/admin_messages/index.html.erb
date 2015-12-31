@@ -1,0 +1,49 @@
+<h1>Listing Admin Messages</h1>
+
+<h2>Unanswered questions</h2>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_messages.each do |admin_message| %>
+      <% if admin_message.answer.nil? %>
+        <tr>
+          <td><%= user_name(admin_message.user) + ' (' + admin_message.user.email + ')' %></td>
+          <td><%= admin_message.content %></td>
+          <td><%= link_to 'Answer', edit_admin_message_path(admin_message) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Answered questions</h2>
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Content</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @admin_messages.each do |admin_message| %>
+      <% if not admin_message.answer.nil? %>
+          <tr>
+            <td><%= user_name(admin_message.user) + ' (' + admin_message.user.email + ')' %></td>
+            <td><%= admin_message.content %></td>
+            <td><%= link_to 'Answer', edit_admin_message_path(admin_message) %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

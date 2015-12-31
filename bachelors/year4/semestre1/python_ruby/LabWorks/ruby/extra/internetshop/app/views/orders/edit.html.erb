@@ -1,0 +1,7 @@
+<h1>Editing Order</h1>
+
+<%= render 'services/show', service: @order.service %>
+<%= render 'form', service: @order.service, order: @order %>
+
+<%= link_to 'Show', @order %> |
+<%= link_to 'Back', orders_path %>

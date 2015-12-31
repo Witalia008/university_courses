@@ -1,0 +1,29 @@
+
+
+<p>
+  <strong>Link:</strong>
+  <a href="<%= @banner.link %>"><%= @banner.link %></a>
+</p>
+
+<p>
+  <strong>Image link:</strong>
+  <a href="<%= @banner.image_link %>"><%= @banner.image_link %></a>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @banner.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @banner.height %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @banner.priority %>
+</p>
+
+<%= link_to 'Edit', edit_banner_path(@banner) %> |
+<%= link_to 'Back', banners_path %>

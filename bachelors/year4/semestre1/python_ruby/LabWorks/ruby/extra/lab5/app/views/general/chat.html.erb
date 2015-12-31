@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <div><%= link_to 'VideoChat', chat_path, class: "navbar-brand" %></div>
+        <form class="navbar-form navbar-right" id="send-message">
+          <div class="form-group"><input class="form-control" id="message"/></div>
+          <button class="btn btn-success" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div data-user-name="<%= current_user.username %>" id="user-info"></div>
+    <div data-api-key="<%= Pusher.key %>" data-auth-endpoint="/pusher/auth" id="chat"></div>
+    <br/>
+
+    <div id="remoteVideos"></div>
+    <ul class="list-inline" id="allVideos">
+      <li>
+        <video autoplay="" id="localVideo" muted="muted"></video>
+      </li>
+    </ul>
+    <dl class="dl-horizontal" id="messages"></dl>
+  </div>
+</div>

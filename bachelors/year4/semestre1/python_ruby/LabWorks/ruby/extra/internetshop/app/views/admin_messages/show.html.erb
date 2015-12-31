@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>User:</strong>
+  <%= user_name(@admin_message.user) + ' (' + @admin_message.user.email + ')' %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= simple_format(@admin_message.content) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_message_path(@admin_message) %> |
+<%= link_to 'Back', admin_messages_path %>

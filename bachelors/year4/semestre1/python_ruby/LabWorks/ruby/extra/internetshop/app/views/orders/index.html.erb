@@ -1,0 +1,9 @@
+<h1>Listing Orders</h1>
+
+<h2>Not approved</h2>
+<%= render 'list', orders: @orders.where('is_approved = FALSE OR is_approved IS NULL') %>
+
+<h2>Approved</h2>
+<%= render 'list', orders: @orders.where(is_approved: true) %>
+
+<%= link_to 'New Order', new_order_path %>

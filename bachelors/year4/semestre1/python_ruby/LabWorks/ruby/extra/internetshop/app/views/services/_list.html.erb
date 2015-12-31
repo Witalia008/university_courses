@@ -1,0 +1,25 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price per hour</th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <% nannies.each do |nanny| %>
+      <tr>
+        <td><%= nanny.user.worker.name %></td>
+        <td><%= nanny.description %></td>
+        <td><%= nanny.nanny.price %></td>
+        <% if not current_user.nil? %>
+            <td><%= link_to 'Details', buy_service_path(nanny) %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,20 @@
+<%= form_for(@message, url: url, html: { class: 'basic-grey'}) do |f| %>
+    <% if @message.errors.any? %>
+        <ul>
+          <% @message.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :text %>
+      <%= f.text_area :text, cols: 10 %>
+    </div>
+    <%= f.hidden_field :to_id, value: @local_user.id %>
+    <%= f.hidden_field :group_id, value: group.id if group %>
+
+    <div class="actions">
+      <%= f.submit action %>
+    </div>
+<% end %>

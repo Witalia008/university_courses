@@ -1,0 +1,58 @@
+
+<style>
+  #news {
+    width: 70%;
+    float: left;
+    padding: 0 0 0 1%;
+  }
+  .news {
+    float: left;
+    width: 100%;
+  }
+  .news .date {
+    float: left;
+  }
+  .news .edit {
+    float: left;
+    padding: 0 0 0 10%;
+  }
+  #banners {
+    float: right;
+    width: 20%;
+  }
+  .banner {
+    float: right;
+    width: 100%;
+  }
+  .banner:hover {
+    background-color:#ffffff;
+  }
+
+</style>
+<div id="news">
+  <% @news.each do |n| %>
+    <div class="news">
+      <h2><%= n.title %></h2>
+      <%= simple_format(n.content) %>
+      <div class="date"><%= n.created_at.to_date %></div>
+      <% if is_admin %>
+        <div class="edit"><%= link_to 'Edit', edit_news_item_path(n) %></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div id="banners">
+  <% @banners.each do |b| %>
+    <a class="banner" href="<%= b.link %>">
+      <img style="float: right;" src="<%= b.image_link %>"
+        <% unless b.width.nil? %>
+          width=<%= b.width %>
+        <% end %>
+        <% unless b.height.nil? %>
+          height=<%= b.height %>
+        <% end %>
+      />
+    </a><br/><br/>
+  <% end %>
+</div>

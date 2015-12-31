@@ -1,0 +1,5 @@
+<h2>Edit group</h2>
+
+<%= render 'form', url: group_path(@local_user, @group), action: :Save %>
+
+<%= link_to 'Back', group_path(@local_user, @group) %>

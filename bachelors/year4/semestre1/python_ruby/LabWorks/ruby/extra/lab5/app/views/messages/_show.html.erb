@@ -1,0 +1,8 @@
+<div>
+  <% if msg.group && can_edit_messages(msg) || myself %>
+    <%= link_to 'X', message_path(@local_user, msg), method: :delete %>
+    <%= link_to 'E', edit_message_path(@local_user, msg) %>
+  <% end %>
+  <b><%= msg.from.username %> <%= "to #{msg.to.username}" unless msg.group %>:</b>
+  <%= msg.text %>
+</div>

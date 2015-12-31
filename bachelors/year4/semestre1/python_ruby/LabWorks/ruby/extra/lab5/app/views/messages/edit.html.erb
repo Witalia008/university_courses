@@ -1,0 +1,4 @@
+<h2>Edit Message</h2>
+
+<%= render 'messages/form', url: message_path(@local_user, @message),
+           group: @message.group, action: :Save %>

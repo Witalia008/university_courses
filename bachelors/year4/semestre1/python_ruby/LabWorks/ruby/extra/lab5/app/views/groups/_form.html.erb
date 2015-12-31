@@ -1,0 +1,21 @@
+<%= form_for(@group, url: url, html: {class: 'basic-grey'}) do |f| %>
+    <% if @group.errors.any? %>
+        <ul>
+          <% @group.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :group_name %>
+      <%= f.text_field :group_name, autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.label 'Open?' %>
+      <%= f.check_box :open %>
+    </div>
+    <div class="actions">
+      <%= f.submit action %>
+    </div>
+<% end %>

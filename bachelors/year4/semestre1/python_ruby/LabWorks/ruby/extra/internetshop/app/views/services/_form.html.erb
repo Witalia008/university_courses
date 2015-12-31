@@ -1,0 +1,64 @@
+<script>
+  function change_children_prices(num) {
+    num = parseInt(num);
+    len = $("#children_prices .field").length;
+    if (len > num) {
+      for (i = 0; i < len - num; i++) {
+        $("#children_prices .field").last().remove()
+      }
+    } else {
+      for (i = 0; i < num - len; i++) {
+        new_field = $("#children_prices .field").first().clone();
+        text = "Price per hour for " + (len + i + 1).toString() + " children";
+        new_field.find("label").text(text);
+        new_field.appendTo("#children_prices")
+      }
+    }
+  }
+
+  window.onload = function() {
+    change_children_prices($("#service_max_children").val())
+  };
+</script>
+
+<%= form_for(@service) do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% @service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :service_type %><br>
+    <%= f.select :service_type, Service::TYPE_OPTION_NAMES %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :maximal_number_of_children %><br>
+    <%= f.number_field :max_children, value: @service.nanny.max_children, min: 1, onchange: "change_children_prices(this.value)" %>
+  </div>
+  <div id="children_prices">
+    <div class="field">
+      <%= f.label :price, 'Price per hour for 1 child' %><br>
+      <%= f.number_field :price, multiple: true, value: @service.nanny.price[0], min: 0 %>
+    </div>
+    <% @service.nanny.price[1..-1].each_with_index do |p, i| %>
+      <div class="field">
+        <%= f.label :price, 'Price per hour for ' + (i+2).to_s + ' children' %><br>
+        <%= f.number_field :price, multiple: true, value: p, min: 0 %>
+      </div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab5</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,200,500,600,700,800,300" rel="stylesheet"/>
+  <%= stylesheet_link_tag 'default', media: 'all' %>
+  <%= stylesheet_link_tag 'fonts', media: 'all' %>
+  <%= stylesheet_link_tag 'form_style', media: 'all' %>
+
+  <%= yield :headers %>
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="menu-wrapper">
+    <div id="menu" class="container">
+      <ul>
+        <li class="<%= 'current_page_item' if session[:cur_menu] == :home %>">
+          <%= link_to :Home, root_path %>
+        </li>
+        <li class="<%= 'current_page_item' if session[:cur_menu] == :chat %>">
+          <%= link_to 'Chat', chat_path %>
+        </li>
+        <li class="<%= 'current_page_item' if session[:cur_menu] == :people %>">
+          <%= link_to 'People', all_users_path %>
+        </li>
+        <% if current_user %>
+            <li class="<%= 'current_page_item' if session[:cur_menu] == :groups %>">
+              <%= link_to 'Groups', all_groups_path %>
+            </li>
+            <li class="<%= 'current_page_item' if session[:cur_menu] == :profile %>">
+              <%= link_to current_user.username + "'s Profile", profile_path(current_user) %>
+            </li>
+            <% if current_user.admin? %>
+                <li><%= link_to :Admin, rails_admin_path %></li>
+            <% end %>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- end #menu -->
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h1><a href="<%= general_index_path %>">Social Network</a></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<div id="banner"></div>-->
+  <div id="page" class="container">
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div class="box2">
+      <%= yield :sidebar %>
+    </div>
+  </div>
+
+</div>
+
+<div id="copyright" class="container">
+  <p>&copy; Mary. All rights reserved.</p>
+</div>
+
+</body>
+</html>

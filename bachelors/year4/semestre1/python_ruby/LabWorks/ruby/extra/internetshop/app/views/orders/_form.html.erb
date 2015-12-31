@@ -1,0 +1,92 @@
+<script>
+  window.onload = function() {
+
+    $('#new_order').on('submitjs', function(e) {
+      var valuesToSubmit = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: $(this).attr('action'), //sumbits it to the given url of the form
+        data: valuesToSubmit,
+        dataType: "script" // you want a difference between normal and ajax-calls, and json is standard
+      }).success(function(json){
+        console.log("success", json);
+      });
+      return false; // prevents normal behaviour
+    });
+    $('#new_order').trigger('submitjs')
+  };
+
+  function recalc_price() {
+    $('#new_order').trigger('submitjs')
+  }
+</script>
+
+<%= form_for(order, url: order_service_path(service)) do |f| %>
+    <% if order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(order.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+          <ul>
+            <% order.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :number_of_children %>
+      <%= f.number_field :children, value: 1, min: 1, onchange: 'recalc_price()' %>
+    </div>
+
+    </div>
+    <div class="field">
+      <%= f.label :start_time %>
+      <div style="width: 200pt">
+        <div class="input-group datetime" id="datetimepicker1">
+          <%= f.text_field :start_time, onchange: 'recalc_price()', class: 'form-control', data: { date_format: 'YYYY-MM-DD HH:00' } %>
+          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          <span onclick="$('#order_start_time').val('')" style="font-size: 20pt; cursor: pointer">X</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#datetimepicker1').datetimepicker({
+        defaultDate: new Date(),
+        daysOfWeekDisabled: [0, 6]
+      });
+    </script>
+    <div class="field">
+      <%= f.label :end_time %>
+      <div style="width: 200pt">
+        <div class="input-group datetime" id="datetimepicker2">
+          <%= f.text_field :end_time, onchange: 'recalc_price()', class: 'form-control', data: { date_format: 'YYYY-MM-DD HH:00' } %>
+          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          <span onclick="$('#order_end_time').val('')" style="font-size: 20pt; cursor: pointer">X</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#datetimepicker2').datetimepicker({
+        defaultDate: new Date(),
+        useCurrent: false
+      });
+      $("#datetimepicker1").on("dp.change", function (e) {
+        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+        recalc_price();
+      });
+      $("#datetimepicker2").on("dp.change", function (e) {
+        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+        recalc_price();
+      });
+      $('#datetimepicker1').data("DateTimePicker").minDate(new Date());
+      $('#datetimepicker2').data("DateTimePicker").minDate(new Date());
+    </script>
+    <div class="field">
+      <%= label_tag :price %>
+      <%= label_tag '', '0', id: :price %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Order' %>
+    </div>
+<% end %>

@@ -1,0 +1,46 @@
+<h2>Sign up as worker</h2>
+
+<%= form_for(resource, as: resource_name, url: create_worker_path) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, accept: "image/png,image/gif,image/jpeg" %>
+  </div>
+
+  <%= f.fields_for :worker do |uf| %>
+    <div class="field">
+      <%= uf.label :name %><br/>
+      <%= uf.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= uf.label :description %><br/>
+      <%= uf.text_area :name %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

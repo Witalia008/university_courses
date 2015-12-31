@@ -1,0 +1,23 @@
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Service</th>
+    <th>Worker</th>
+    <th>Price</th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.service.service_name %></td>
+        <td><%= order.service.user.worker.name %></td>
+        <td><%= order.price %></td>
+        <td><%= link_to 'Show', order %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

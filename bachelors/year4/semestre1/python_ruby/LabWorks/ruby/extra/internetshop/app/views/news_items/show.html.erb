@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @news_item.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @news_item.content %>
+</p>
+
+<%= link_to 'Edit', edit_news_item_path(@news_item) %> |
+<%= link_to 'Back', news_items_path %>

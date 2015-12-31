@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="header">
+  <ul class="ops">
+    <% if is_admin %>
+      <li><%= link_to 'User questions' + unanswered_admin_str, admin_messages_path %></li>
+      <li><%= link_to 'Backup', home_backup_path, :method => :post %></li>
+    <% end %>
+    <% if is_customer %>
+      <li><%= link_to 'Shop', services_path %></li>
+    <% end %>
+    <% if is_worker %>
+      <li><%= link_to 'My services', user_services_path(current_user.id) %></li>
+    <% end %>
+    <% if not current_user.nil? %>
+      <li><%= link_to 'Users', users_path %></li>
+      <li><%= link_to 'Conversations' + unread_str, messages_path %></li>
+    <% end %>
+    <% unless signed_in? %>
+      <li><%= link_to 'Create customer account', new_customer_path %></li>
+      <li><%= link_to 'Create worker account', new_worker_path %></li>
+  <% end %>
+  </ul>
+  <ul class="links">
+    <% if signed_in? %>
+      <li><%= link_to 'Logout', destroy_user_session_path %></li>
+      <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+    <% else %>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+    <% end %>
+    <% if signed_in? and not is_admin %>
+      <li><%= link_to 'Contact administration', new_admin_message_path %></li>
+    <% end %>
+    <% if is_customer %>
+      <li><%= link_to 'Orders', orders_path %></li>
+    <% end %>
+    <li><%= link_to 'Home', home_index_path %></li>
+  </ul>
+</div>
+
+<div id="content">
+  <p id="notice"><%= notice %></p>
+  <%= yield %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+
+<h1>Your services</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Service</th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.service_name %></td>
+        <td>
+          <%= link_to 'Show', service_path(service) %>
+          <%= link_to 'Delete', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+  <% end %>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+
+<% if not current_user.nil? and @user.id == current_user.id %>
+  <%= link_to 'New Service', new_service_path %>
+<% end %>

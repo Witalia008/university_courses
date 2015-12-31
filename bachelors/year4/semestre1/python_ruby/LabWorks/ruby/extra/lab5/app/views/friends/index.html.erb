@@ -1,0 +1,11 @@
+<%= @local_user.username %>'s friends
+<ul>
+  <% @friends.each do |user| %>
+      <li>
+        <%= link_to user.username, profile_path(user) %>
+        <% if myself %>
+          <%= link_to 'X', remove_friend_path(user), method: :delete %>
+        <% end %>
+      </li>
+  <% end %>
+</ul>

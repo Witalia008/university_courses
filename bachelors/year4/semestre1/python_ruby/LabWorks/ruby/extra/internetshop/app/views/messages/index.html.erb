@@ -1,0 +1,16 @@
+
+
+<h1>Listing Conversations</h1>
+
+<table>
+  <tbody>
+    <% @messaged_users.each do |user| %>
+      <tr>
+        <td><%= user_name(user) + unread_user_str(user) %></td>
+        <td><%= link_to 'Show', user_new_message_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

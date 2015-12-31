@@ -1,0 +1,51 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+
+Users with Devise:
+http://guides.railsgirls.com/devise/
+Add fields to Devise User:
+https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
+
+Rails Admin:
+http://rubyonrailsexamples.blogspot.com/2013/11/railsadmin-is-best-admin-framework-gem.html
+Authorize with CanCanCan:
+https://github.com/sferik/rails_admin/wiki/Cancancan
+
+Videochat:
+http://blog.carbonfive.com/2014/10/16/webrtc-made-simple/
+
+Many-to-Many (to itself):
+http://stackoverflow.com/questions/13694654/specifying-column-name-in-a-references-migration
+http://stackoverflow.com/questions/2168442/many-to-many-relationship-with-the-same-model-in-rails
+Twice to model:
+http://stackoverflow.com/questions/2606565/how-do-i-associate-one-model-twice-to-another
+
+ImageUploader:
+https://github.com/carrierwaveuploader/carrierwave

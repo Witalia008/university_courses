@@ -1,0 +1,28 @@
+<%= render 'services/show', service: @order.service, children: @order.nanny.children %>
+
+<p>
+  <strong>Number of children</strong>
+  <%= @order.nanny.children %>
+</p>
+<p>
+  <strong>Start time</strong>
+  <%= @order.start_time %>
+</p>
+<p>
+  <strong>End time</strong>
+  <%= @order.end_time %>
+</p>
+<p>
+  <strong>Price</strong>
+  <%#= @order.price %>
+</p>
+
+<p>
+  <% if @order.is_approved %>
+    <%= link_to 'Pay' %>
+  <% else %>
+    <strong>Not approved</strong>
+  <% end %>
+</p>
+
+<%= link_to 'Back', orders_path %>

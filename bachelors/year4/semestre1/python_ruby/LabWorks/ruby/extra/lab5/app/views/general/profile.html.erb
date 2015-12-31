@@ -1,0 +1,29 @@
+<h1><%= @local_user.username %>'s Profile</h1>
+<h2><%= @local_user.first_name %> <%= @local_user.last_name %></h2>
+<h2><%= @local_user.email %></h2>
+<h2><%= @local_user.phone %></h2>
+
+<%= link_to 'Groups', groups_path(@local_user) %>
+<%= link_to 'Friends', friends_path(@local_user) %>
+<% if myself %>
+  <%= link_to 'Messages', messages_path(current_user) %>
+<% end %>
+<% if @local_user.skype && !myself %>
+    <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+    <div id="SkypeButton_Call_witalij008_1">
+      <script type="text/javascript">
+        Skype.ui({
+          "name": "dropdown",
+          "element": "SkypeButton_Call_witalij008_1",
+          "participants": ["<%= @local_user.skype %>"]
+        });
+      </script>
+    </div>
+<% end %>
+<% unless myself %>
+  <%= button_to 'Write a message', new_message_path(@local_user),
+                class: 'basic-grey-btn', method: :get %>
+<% end %>
+<% if myself %>
+  <%= button_to 'Edit Personal Info', edit_user_registration_path, class: 'basic-grey-btn', method: :get %>
+<% end %>

@@ -1,0 +1,26 @@
+<h2>Add banner</h2>
+<%= form_for(@banner,
+             url: group_banners_path(@local_user, @group),
+             html: {class: 'basic-grey', method: :post}) do |f| %>
+
+    <% if @banner.errors.any? %>
+        <ul>
+          <% @banner.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Add' %>
+    </div>
+<% end %>

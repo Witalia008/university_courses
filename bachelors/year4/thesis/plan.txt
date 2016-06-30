@@ -1,0 +1,137 @@
+-- 0 Find transcriptions somewhere
+-- 1 Convert DB to async one
+-- 1 Refactor
+
+Dictionary:
+
+Materials:
+
+Trainings:
+
+Main page:
+- 0 Picture-upload functionality
+
+Settings:
+- 3 Add "Suggest words" functionality
+- 3 Reminders in the time set (missing on WP8.1)
+
+
+## DONE ##
+Dictionary:
+- 1 Allowing user to enter custom translation
+- 4 Show Progress circle properly
+- 5 Find dictionaries (or use online tools - Yandex.Translate looks all right)
+- 5 "Search" functionality
+- 5 Implement "Learn"/"Delete"/"Add to dict" etc. functionality (depends on DB func.)
+- Added nice list handling
+- Translation allso pulled from Bing
+- 2 Move words using multiselection (complications expected, switches required)
+- 4 Cool checkboxes
+- 1 Perhaps separate page with all words
+
+Materials:
+- 2 Added "Learnt" tick
+- 4 Implement on-click translation and adding to dictionary
+- 3 Difficulty from lingualeo
+- 2 Rating parsed from site
+-- Materials were parsed from Lingualeo.com, stored locally
+- 5 Where take materials from? (perhaps, some parsers shall be required)
+- What will be stored offline?
+- 5 "Search"
+- 3 "Hide learnt" functionality
+- 1 Beautify a little bit text representation (word-wrapping)
+- Scroll to bottom -> load more
+
+Main page:
+- 4 Language info is binded and updated
+- 5 Edit name
+- 5 Language chooser dialog
+- 5 Add language funcitonality (depends on language chooser dialog)
+- 4 Choose native language
+- 5 Choose active language funcitonality
+- 4 Progress is not being updated
+- 5 Handle levels of languages
+- 3 Handle absense of languages
+- 2 Handle levels of languages (redesign pattern)
+- 2 Redo layout, calculate positions properly
+
+Settings:
+- 5 Figure out problem with switch cells ("Save" button added, switches have a bug)
+- 4 Add functionality to set reminding time
+- 1 "Contact us" will open email dialog
+- 1 "Pronunciation" and "Vibration" are parts of other subsystems
+- 2 Interface language chooser
+
+Trainings:
+- 2 "Accept answer" button 
+- 2 Allowed 3 mistaked in "Constructs"
+- 2 "Sprint Init" page 
+- 4 "Results" page 
+- 3 More points till the word is considered to be learnt
+- 5 Select properly words for practicing
+- 5 "Native-Foreign", "Foreign-Native", "Match pictures" - select wrong translations
+- 3 "Sprint"
+- 2 "Word constructor"
+- 5 Figure out how to do "Brainstorm"
+- 1 "Complete text"
+- 3 "Prepositions"
+- 2 Read the rule in prepositions might be a problem
+- 3 Figure out problem with NavigationBar (workaround with RelativeLayout)
+- 2 "Text complete" different result page
+- 2 "Don't know" buttons wider (include label)
+
+-- Design database entities.
+
+-- "Rating" in materials is parsed from website
+-- Language chooser dialog
+-- Save button in settings
+-- Change native language in settings
+-- Change interface language
+-- Complete language entity
+-- Addition/removal of languages
+-- Language choosing happens:
+---- Decide where and how to save languages
+---- Addition / removal of languages, database part
+-- Prompt for username
+-- Update words in lists properly (when translation has been added)
+-- Problem with moving words between lists in dictionary (workaround would be recreating them each time)
+-- Word page (update lists on dictionary page)
+-- Pronounce (in word page)
+-- Fetch pictures for words
+-- Handle absense of languages
+-- Handle Language daily progress properly
+-- Circled images
+-- Organise colours, etc. as resorces
+-- Loading indicator
+-- Char width calculation depending on size
+-- Translate language names and level names
+-- loading of words in material in chunks - listview recycle
+-- Choose language/translation change from pages to dialogs
+-- Colours as resources
+-- Detect interface language on startup
+-- Xamarin.Insights for bug tracking
+-- "Select all" button
+-- Finish tours for new users
+-- Back button for occasions when there's no hardware button
+
+Bugs:
+- "All words" page disregards language
+- In "Sprint" best idea is to click constantly
+- In dictionary at some point lists could be empty
+- After delete/send to trainings words should be deselected
+- 5 In "Translation chooser" ok button gets off the screen if placeholder is long
+- 5 Word translation in materials crashed when lots of requests
+- 5 Prepositions crash (without internet failed to read json)
+- Deleted extra icons overload
+
+
+
+Reminder:
+http://www.dotnetcurry.com/xamarin/1047/xamarin-forms-hello-tutorial
+https://nnish.com/2014/12/16/scheduled-notifications-in-android-using-alarm-manager/
+Circle Image:
+https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/ImageCircle
+Toasts:
+https://github.com/EgorBo/Toasts.Forms.Plugin
+Xamarin.Insights
+https://developer.xamarin.com/api/type/Xamarin.Insights/

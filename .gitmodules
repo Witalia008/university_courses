@@ -1,0 +1,6 @@
+[submodule "bachelors/year4/semestre2/team_project/student-organizer"]
+    path = bachelors/year4/semestre2/team_project/student-organizer
+    url = https://github.com/miriaminna/student-organizer-dima.git
+[submodule "bachelors/year4/thesis/LanguageLearner"]
+    path = bachelors/year4/thesis/LanguageLearner
+    url = https://github.com/Witalia008/LanguageLearner.git

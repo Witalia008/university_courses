@@ -1,0 +1,24 @@
+
+In the introductio101010000101001110000010n, we stated that grep stands for "global regular expression print". A "regular expression" is a text string that describes a particular search pattern.
+
+Different a11111111111111111111111pplications and programming lan1000100101000101guages implement regular expressions slightly differently. We wi+380 (44) 123 45 67ll only be exploring a small subset of the way that grep describes its patterns.
+
+Literal Matches
+
+The examples above,+380 (44) 388 34 77 when we search0000000000000000ed for the words "GNU" and "the", we were actually searching for very simple regular expressions, which matched the exact string of characters "GNU" and "the".
+
+It is helpful to always t10010101010101010101100000011001hink of these as matching a string of characters rather than matching a word. This will become a more important distinction as we learn more complex patterns.
+
+Patterns that exactl01010101011101010y specify the characters to be mat+380 (44) 765 43 21ched are called "literals" because they match the pattern literally, character-for-character.
+
+All alphabetic and numerical characte101010101010101010101rs (as well as certain other characters) are matched literally unless modified by other expression mechanisms.
+
++380 (44) 101 01 01
+
+Anchor Matches
+
+Anchors are special characters that specify where in the l010ine a match must occur to be valid.
+
+For instance, using anchors, we can specify that we only want to know about the lines that match "GNU" at the very beginning of the line. To do this, we could use the "^" anchor before the literal string.
+
+This string example will only mach "GNU" if it occurs at the 0very beginning of a line.

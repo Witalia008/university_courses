@@ -4,3 +4,9 @@
 [submodule "bachelors/year4/thesis/LanguageLearner"]
     path = bachelors/year4/thesis/LanguageLearner
     url = https://github.com/Witalia008/LanguageLearner.git
+[submodule "masters/year5/final/LanguageLearnerBot"]
+    path = masters/year5/final/LanguageLearnerBot
+    url = https://github.com/Witalia008/LanguageLearnerBot.git
+[submodule "masters/year5/web_development/LanguageLearnerWeb"]
+    path = masters/year5/web_development/LanguageLearnerWeb
+    url = https://github.com/Witalia008/LanguageLearnerWeb.git

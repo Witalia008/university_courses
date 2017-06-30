@@ -1,0 +1,71 @@
+- Account (apart from registered users)
+    o Username
+    o Name
+    o Surname
+    o UserImage
+    o NativeLang
+- Levels
+- Image search
+- Online translation
+- DAOs
+     o Language
+        x List of available languages (and interface)
+        x User's data/progress for each language
+    o Material
+        x Materials for each language
+        x User's data/progress on each material
+    o Settings (always related to user)
+    o Prepositions
+        x Preposition exercises for each language
+        x User's data/progress for each preposition
+    o Word
+        x Global dictionary
+        x User's data/progress for each word
+- For all requests check for proper user permissions
+
+Controllers' extension:
+- Profile:
+    o Get interface language
+- ProfileSettings:
+    o SettingsItem GetByKey(string key);
+    o IEnumerable<Language> GetInterface();
+- ProfileWord
+    o IEnumerable<Word> GetAll(string langFrom, string langTo);
+    o IEnumerable<Word> GetRandomNol(
+            int limit, string tags,
+            string lang_from, string lang_to);
+    o IEnumerable<Word> GetRandTrans(
+            int limit, string tags, string lang);
+    o Task<IEnumerable<Word>> GetByInfix(
+            string lang_from, string lang_to,
+            string tags,
+            string inf,
+            bool entire, bool inTransl = false);
+    o int WordsOnLearn(string lang_from, string lang_to, string tags);
+- ProfileMaterial
+    o IEnumerable<MaterialItem> GetByQueryString(
+            string lang, string tags,
+            string inf, bool hideLearnt,
+            int start, int limit);
+    o IEnumerable<MaterialItem> GetRandom(
+            string lang, string tags,
+            int limit, bool learntOnly);
+    o int AddAll(IEnumerable<MaterialItem> maters); 
+
+
+- Language
+    o Language GetByName(string name);
+    o Language GetByShort(string name);
+    o Language GetByShortCC(string name);
+- ProfileLanguage
+    o Language GetActive();
+    o void ResetDailyProgress();
+    o IEnumerable<Language> GetByOnLearn(bool onLearn);
+    o int AddAll(IEnumerable<Language> langs);
+
+- ProfilePreposition
+    o IEnumerable<Preposition> GetRandomNol(
+            int limit, string lang);
+    o int AddAll(IEnumerable<Preposition> preps);
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<metamodel:Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:metamodel="http://www.example.org/metamodel"
+    xsi:schemaLocation="http://www.example.org/metamodel metamodel/metamodel.ecore">
+  <products
+      title="Mobile Phone"
+      price="100.0"
+      type="Gadgets"
+      manufacturer="//@manufacturers.0"
+      rating="5"/>
+  <products
+      title="Abibas"
+      price="1.0"
+      type="Clothing"
+      manufacturer="//@manufacturers.1"
+      rating="1"/>
+  <manufacturers
+      name="Samsung"
+      rating="5"/>
+  <manufacturers
+      xsi:type="metamodel:ManufacturerCountry"
+      name="China"
+      rating="1"
+      location="Asia"/>
+</metamodel:Model>

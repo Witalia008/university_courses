@@ -1,0 +1,89 @@
+// https://wiki.eclipse.org/Xcore#Getting_Started
+
+package org.example.witalia
+
+
+import java.util.Date
+import java.text.SimpleDateFormat
+import java.text.ParseException
+import java.util.List
+
+class Store
+{
+    refers MobilePhone[] phones opposite stores
+    
+    op MobilePhone getByManufacturer(Manufacturer man)
+    {
+        for (MobilePhone phone : phones)
+        {
+            if (phone.manufacturer == man) return phone    
+        }
+        return null
+    }
+    
+    op List<MobilePhone> getWithinPrice(double minPrice, double maxPrice)
+    {
+        var results = <MobilePhone>emptyList()
+        for (MobilePhone phone : phones)
+        {
+            if (phone.price >= minPrice && phone.price <= maxPrice)
+                results.add(phone)
+        }
+        return results.toList
+    }
+}
+
+class MobilePhone
+{
+    String name
+    String model
+    double price
+    int rating
+    Date releaseDate
+    container Manufacturer manufacturer opposite mobilePhones
+    refers Characteristic[] characteristics opposite mobilePhones
+    refers Store[] stores opposite phones
+}
+
+class Manufacturer
+{
+    String name
+    String address
+    String phone
+    int rating
+    contains MobilePhone[] mobilePhones opposite manufacturer
+}
+
+class Characteristic
+{
+    String name
+    CharacteristicType ^type
+    String[] values
+    refers MobilePhone[] mobilePhones opposite characteristics
+}
+
+enum CharacteristicType
+{
+    Hardware as "HARD",
+    Software as "SOFT",
+    Support as "SUPP"
+}
+
+type Date wraps Date
+create
+{
+    try
+    {
+        if (it != null) new SimpleDateFormat("yyyy-MM-dd").parse(it);
+    }
+    catch (ParseException ex)
+    {
+        throw new RuntimeException(ex);
+    }
+}
+convert
+{
+    if (it != null) new SimpleDateFormat("yyyy-MM-dd").format(it);
+}
+
+type List<T> wraps List

@@ -1,0 +1,62 @@
+// https://dzone.com/articles/getting-started-code
+
+�IMPORT metamodel�
+
+�EXTENSION template::GeneratorExtensions�
+
+�DEFINE main FOR Model�
+
+    �FILE "manufacturers.html"�
+        <html>
+        <head>
+          <title>Manufacturers</title>
+        </head>
+        <body>
+            <table border="1">
+                <tr>
+                    <th colspan="2">Origin</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                </tr>
+                �EXPAND manufacturerEntry FOREACH manufacturers�
+            </table>
+        </body>
+        </html>
+    �ENDFILE�
+
+    �EXPAND productPage FOREACH products�
+�ENDDEFINE�
+
+�DEFINE manufacturerEntry FOR Manufacturer�
+    <tr id="�this.name�">
+        <td colspan="2">�this.name�</td>
+        <td>�this.rating�</td>
+    </tr>
+�ENDDEFINE�
+�DEFINE manufacturerEntry FOR ManufacturerCountry�
+    <tr id="�this.name�">
+        <td>�this.name�</td>
+        <td>�this.location�</td>
+        <td>�this.rating�</td>
+    </tr>
+�ENDDEFINE�
+
+�DEFINE productPage FOR Product�
+    �FILE title+".html"�
+        <html>
+        <head>
+          <title>�title�</title>
+        </head>
+        <body>
+            <h1>Title: �title�</h1>
+            <h3>Price: �price�</h3>
+            <h3>Type: �type�</h3>
+            <h3>Rating: �rating�</h3>
+            <h3><a href="manufacturers.html#�manufacturer.name�">Manufacturer</a></h3>
+        </body>
+        </html>
+    �ENDFILE�
+�ENDDEFINE�
